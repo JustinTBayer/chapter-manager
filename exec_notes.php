@@ -113,11 +113,19 @@ if ($_SESSION['sessionexec'] == 1) {
 	}
 	
 } else {
-	echo "You must have Executive privledges to see this page.";
+	echo "You must have Executive privileges to see this page.";
 }
 ?>
 
 </div>
+<script type="text/javascript" src="includes/html_editor/tinymce.min.js"></script>
+<script type="text/javascript">
+tinyMCE.init({
+        selector : "textarea",
+		plugins : ["charmap", "fullscreen", "importcss", "link", "paste", "textcolor", "anchor", "code", "lists", "preview", "searchreplace", "table", "autolink", "contextmenu"],
+		contextmenu: "link image inserttable | cell row column deletetable"
+});
+</script>
 
 <?php
 page_footer();
