@@ -38,6 +38,7 @@ Configuring settings
 
 
 Creating a MySQL user with phpMyAdmin
+
 1. Log in as root
 2. Click "Users" in the top menu bar
 3. Click "Add user"
@@ -52,6 +53,7 @@ Creating a MySQL user with phpMyAdmin
 12. Sign out of phpMyAdmin
 
 Increasing allowable import size (to allow the import of the database)
+
 1. Edit the php.ini file (usually located in the installation at php5/apache2/php.ini)
 2. Set memory_limit = 128M if it is not already
 3. Set post_max_size = 100M if it is not already
@@ -59,6 +61,7 @@ Increasing allowable import size (to allow the import of the database)
 5. Restart your Apache installation
 
 Importing the database
+
 1. Log in to phpMyAdmin(http://localhost/phpmyadmin) with the user created earlier (user=apo password=dbPW)
 2. Select database with the same name as username from the left panel (in this case apo)
 3. Select "Import" from the top menu
@@ -66,6 +69,7 @@ Importing the database
 5. Click the "Go" button at the bottom of the page
 
 Setting up the server
+
 1. Copy the files from Github to Apache's "www" folder
 2. Modify mysql_access.php with the username/password set earlier (set to apo/dbPW by default)
 
