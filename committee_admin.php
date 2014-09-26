@@ -18,10 +18,10 @@ function remove_member()
 {
 		$id = $_GET['remove'];
 		$position_id = $_GET['p'];
-		$sql = "DELETE FROM committee_members 
+		$sql = "DELETE FROM committee_members
 				WHERE id = ".$id." AND position = ".$position_id."";
 		$result = mysql_query($sql);
-}	
+}
 function display_init($user_id){
 
 	$sql = "SELECT p.position, p.comm_day AS day, p.comm_location AS location,
@@ -65,10 +65,10 @@ echo("
 	Please note that if you correct any info, you will have to include
 	all of the information you want to be shown, not just what is missing.<br/>
 	<hr />
-");		
+");
 //on submit, this initializes the committee recording procedure.
-echo("If you would like to schedule or record attendance for a meeting, click \"Go!\""); 
-echo 
+echo("If you would like to schedule or record attendance for a meeting, click \"Go!\"");
+echo
 <<<END
 	<form method="post" action="$_SERVER[PHP_SELF]" id="navigate">
 		<input type="hidden" name="position" value="$position"/>
@@ -88,7 +88,7 @@ END;
 		}
 		}else{
 //on submit, we display new committee, so they can set day, time, etc.
-echo 
+echo
 <<<END
 	I see that you do not have a committee.<br/>
 	Would you like to set one up? You must set it up for it to show up on the 'committee times' page.
@@ -98,15 +98,15 @@ echo
     	<input type="submit" value="YES!"/>
     </form>
 END;
-		}	
+		}
 }
 
 function display_new_committee($position){
 	echo("Please fill out the following form with information about your committee,
 		if you do not have a regular time, day, or location, please submit the form
-		blank. By doing so, your committee will become active and you will be able to 
+		blank. By doing so, your committee will become active and you will be able to
 		record your committee attendance. Thanks.<br/><p>");
-		
+
 		$sql = "SELECT p.position, p.comm_day AS day, p.comm_location AS location,
 			p.comm_time AS time, p.comm_active AS active, contact_information.id AS id,
 			contact_information.firstname AS firstname, contact_information.lastname AS lastname,
@@ -129,7 +129,7 @@ function display_new_committee($position){
 		}
 
 
-echo 
+echo
 <<<END
 	<table><tr>
 	<form method="post" action="$_SERVER[PHP_SELF]" id="navigate">
@@ -181,8 +181,8 @@ function process_new($user_id, $position){//success.
 		//format ####[am|pm]
 		$time = $hour.$minute.$ampm;
 	}
-	
-	$sql = "UPDATE positions 
+
+	$sql = "UPDATE positions
 			SET comm_day = '".$day."', comm_location = '".$location."',
 			comm_time = '".$time."', comm_active = 1
 			WHERE position = '".$position."'";
@@ -202,7 +202,7 @@ echo
 	(click on one of the arrows, if you don't see them please follow the format.)<br/>
 	Format: yyyy-mm-dd<br/>
 	<form method="post" action="$_SERVER[PHP_SELF]" id="navigate">
-		<input type="date" name="date"> 
+		<input type="date" name="date">
 		<input type="hidden" name="position" value="$position"/>
 		<input type="hidden" name="new" value="schedule"/>
     	<input type="submit" value="Set"/>
@@ -213,7 +213,7 @@ END;
 	echo("
 	<fieldset>
 		<legend>committees</legend>
-		<form method=\"post\" action=\"$_SERVER[PHP_SELF]\">");	
+		<form method=\"post\" action=\"$_SERVER[PHP_SELF]\">");
 			while($row = mysql_fetch_array($result)){
 				echo("<input type=\"radio\" name=\"committee_date\" value=\"".$row['date']."\">&nbsp;".$row['date']."<br/>");
 			}
@@ -227,7 +227,7 @@ END;
 }
 
 function set_committee($user_id){
-	$sql = "SELECT positions.position_id AS position_id, positions.position, 
+	$sql = "SELECT positions.position_id AS position_id, positions.position,
 			contact_information.position
 			FROM positions
 			JOIN contact_information
@@ -237,7 +237,7 @@ function set_committee($user_id){
 		while($row = mysql_fetch_array($result)){
 			$position_id = $row['position_id'];
 		}
-		
+
 	$sql = "INSERT INTO committee_occurrence
 			(position_id, date)
 			VALUES ('".$position_id."', '".$_POST['date']."')";
@@ -253,43 +253,43 @@ function set_committee($user_id){
 function record_init($user_id){
 	$date = $_POST['committee_date'];
 	$position_id = $_POST['position_id'];
-	
+
 	$sql = "SELECT position AS position FROM positions WHERE position_id = $position_id";
 	$result = mysql_query($sql);
 		while($row = mysql_fetch_array($result))
 		{
 			echo("recording attendance for the {$row['position']} committee on: {$date}<br/>");
 		}
-	
-	$sql = "SELECT contact_information.firstname AS firstname, 
+
+	$sql = "SELECT contact_information.firstname AS firstname,
 			contact_information.lastname AS lastname, contact_information.id AS id
 			FROM contact_information
-			LEFT JOIN committee_members 
-			ON contact_information.id = committee_members.id 
+			LEFT JOIN committee_members
+			ON contact_information.id = committee_members.id
 			WHERE committee_members.position='".$position_id."'
 			ORDER BY lastname, firstname ASC
 			";
 	$result=mysql_query($sql);
-		
+
 	$num_rows = mysql_num_rows($result);
 		if($num_rows == 0)
 		{
 			echo("no one is assigned to your committee, please select individuals from below");
 		}
-	
+
 		for ($i=0;$i<$num_rows;$i++)
 		{
 			$ids;
 			$row = mysql_fetch_assoc($result);
-			$ids[$i] = $row['id'];	
+			$ids[$i] = $row['id'];
 		}
 echo
 <<<END
 	<form action="$_SERVER[PHP_SELF]" method="post">
 		<fieldset>
         	<legend>Record:</legend>
-			
-	
+
+
 END;
 		foreach($ids as $index => $value)
 		{
@@ -303,33 +303,33 @@ END;
 			echo("<input type=\"checkbox\" name=\"attended[]\" value=\"$value\">{$lastname}, $firstname
 				<a href=\"http://apo.truman.edu/committee_admin.php?remove={$value}&p={$position_id}\">remove?</a><br>");
 		}
-		
+
 		echo("<hr/>");
 		echo("<input type=\"submit\" value=\"record for selected\"/>");
 		echo("<hr/>");
-		
-	
-	$sql = "SELECT contact_information.firstname AS firstname, 
+
+
+	$sql = "SELECT contact_information.firstname AS firstname,
 			contact_information.lastname AS lastname, contact_information.id
 			FROM contact_information
-			LEFT JOIN committee_members 
+			LEFT JOIN committee_members
 			ON contact_information.id = committee_members.id
 			WHERE committee_members.id IS NULL
-			AND contact_information.status != 'Alumni' 
-			AND contact_information.status != 'Inactive' 
+			AND contact_information.status != 'Alumni'
+			AND contact_information.status != 'Inactive'
 			AND contact_information.status != 'Advisor'
 			OR (committee_members.position != ".$position_id." AND committee_members.id IS NOT NULL)
 			ORDER BY lastname, firstname ASC";
 	$result = mysql_query($sql);
-		
+
 	$num_rows = mysql_num_rows($result);
 		for ($i=0;$i<$num_rows;$i++)
 		{
 			$ids;
 			$row = mysql_fetch_assoc($result);
-			$ids[$i] = $row['id'];	
+			$ids[$i] = $row['id'];
 		}
-		
+//this should be the part that's duplicating people
 		foreach($ids as $index => $value)
 		{
 			$sql = "SELECT firstname, lastname FROM `apo`.`contact_information` WHERE id = $value";
@@ -339,11 +339,11 @@ END;
 					$firstname = $row['firstname'];
 					$lastname = $row['lastname'];
 				}
-			
-			echo("<input type=\"checkbox\" name=\"attended[]\" value=\"$value\">{$lastname}, $firstname<br>");	
+
+			echo("<input type=\"checkbox\" name=\"attended[]\" value=\"$value\">{$lastname}, $firstname<br>");
 		}
-		
-		
+
+
 		//get the committee id and pass in form
 		$sql = "SELECT committee_id FROM committee_occurrence
 				WHERE date = '".$date."'";
@@ -351,7 +351,7 @@ END;
 			while($row = mysql_fetch_array($result)){
 				$committee_id = $row['committee_id'];
 			}
-echo	
+echo
 <<<END
 			<input type="hidden" name="committee_identifier" value="{$committee_id}"/>
 			<input type="hidden" name="position_identifier" value="{$position_id}"/>
@@ -400,9 +400,9 @@ if($dev == 1){echo("you do not have permission to view this page.");
 ?>
 <a href="http://apo.truman.edu/committee_admin.php">reset</a><br/>
 <?php
- 
-if (isset($_POST['new']) && ('display' == $_POST['new'])) { 
-	display_new_committee($position); 
+
+if (isset($_POST['new']) && ('display' == $_POST['new'])) {
+	display_new_committee($position);
 }elseif (isset($_POST['new']) && ('process' == $_POST['new'])) {
 	process_new($user_id, $position);
 }elseif (isset($_POST['record']) && ('schedule' == $_POST['record'])) {
@@ -417,4 +417,4 @@ if (isset($_POST['new']) && ('display' == $_POST['new'])) {
 	display_init($user_id);
 }
 }
-page_footer(); 
+page_footer();
