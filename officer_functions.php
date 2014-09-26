@@ -20,12 +20,12 @@ function exec_title($result) {
 function execs_in_position($result) {
 	$sql = "SELECT `firstname`, `lastname` FROM `contact_information` WHERE `position` = '$result[position]'";
 	$query_result = mysql_query($sql) or exit("There was an error.");
-	
+
 	while ($row = mysql_fetch_array($query_result)) {
 		echo "<h2>$row[firstname] $row[lastname]</h2>";
 		exec_email($result);
 	}
-	
+
 	if($result['position_id'] == 99){
 		echo "<h2>Logan McCamon</h2>";
 		echo "apo.epsilon.largeservice@gmail.com";
@@ -49,13 +49,13 @@ function last_upload($id) {
 
 	$sql = "SELECT upload.id,  `name` ,  `upload_id` ,  `folder` ,  `date` ,  `size` , contact_information.firstname, contact_information.lastname FROM  `upload` ,  `contact_information`  WHERE upload.upload_id = contact_information.id AND folder = 'Blue and Gold' ORDER BY  `date` DESC LIMIT 1";
 	//echo $sql;
-	/*$sql = "SELECT upload.id,  `name` ,  `upload_id` ,  `folder` ,  `date` ,  `size` , 
-			contact_information.firstname, contact_information.lastname 
-			FROM  `upload` ,  `contact_information` 
-			WHERE upload.upload_id = contact_information.id 
+	/*$sql = "SELECT upload.id,  `name` ,  `upload_id` ,  `folder` ,  `date` ,  `size` ,
+			contact_information.firstname, contact_information.lastname
+			FROM  `upload` ,  `contact_information`
+			WHERE upload.upload_id = contact_information.id
 			ORDER BY  `date` DESC LIMIT 5";*/
 	$query = mysql_query($sql) or die('The search failed.');
-	
+
 	echo("<br/>Most recent Blue & Gold uploaded to the website<br/>");
 	while ($r = mysql_fetch_array($query)) {
 		echo<<<END
@@ -79,13 +79,13 @@ function exec_page(){
 	$note_to_chapter = trim($result['note_private']);
 	if (!empty($note_to_chapter)) {
 		if (!isset($_SESSION['sessionID'])) {
-				echo "<p>You need to be logged in to see the rest of the information.</p>"; 
-			} else {			
+				echo "<p>You need to be logged in to see the rest of the information.</p>";
+			} else {
 				//php echo, join elements with a period.
-				echo('<h3>Notes to Chapter</h3>'.$note_to_chapter);	
+				echo('<h3>Notes to Chapter</h3>'.$note_to_chapter);
 			}
 		}
-	
+
 		if ($id == 14){
 		last_upload($id);
 		}

@@ -1,7 +1,7 @@
 <?php
 function list_members_status_form($sql, $positions_options) {
 	$result = mysql_query($sql) or exit("Error");
-	
+
 	while ($row = mysql_fetch_array($result)) {
 		if ($row[exec] == 1 ) {
 			$is_exec = "CHECKED";
@@ -10,27 +10,27 @@ function list_members_status_form($sql, $positions_options) {
 			$is_exec = "";
 			$is_not_exec = "CHECKED";
 		}
-		
+
 		echo<<<END
 	<tr>
 		<td>
 			$row[firstname] $row[lastname]
 		</td>
 		<td>
-			<select name="member[$row[id]][status]"> 
+			<select name="member[$row[id]][status]">
 				<option>$row[status]</option>
-				<option value="Active">Active</option> 
-				<option value="Associate">Associate</option> 
+				<option value="Active">Active</option>
+				<option value="Associate">Associate</option>
 				<option value="Pledge">Pledge</option>
-				<option value="Pledge Exec">Pledge Exec</option> 
-				<option value="Alumni">Alumni</option> 
-				<option value="Early Alum">Early Alum</option> 
+				<option value="Pledge Exec">Pledge Exec</option>
+				<option value="Alumni">Alumni</option>
+				<option value="Early Alum">Early Alum</option>
 				<option value="Elected">Elected</option>
 				<option value="Appointed">Appointed</option>
-				<option value="Advisor">Advisor</option> 
-				<option value="Inactive">Inactive</option> 
-				<option value="poor_standing">Poor Standing</option> 
-			</select> 
+				<option value="Advisor">Advisor</option>
+				<option value="Inactive">Inactive</option>
+				<option value="poor_standing">Poor Standing</option>
+			</select>
 
 		</td>
 		<td>
@@ -46,23 +46,23 @@ function list_members_status_form($sql, $positions_options) {
 		</td>
 	</tr>
 END;
-	}		
+	}
 }
 
 function get_positions() {
 	$sql = "SELECT `position` FROM `positions`";
 	$result = mysql_query($sql);
-	
+
 	$positions_options = "";
 	while ($row = mysql_fetch_array($result)) {
 		$positions_options = $positions_options . "<option>$row[position]</option>";
 	}
 	return $positions_options;
 }
-				
+
 
 function process_user($member, $user_id) {
-	
+
 	$sql = "UPDATE `contact_information` SET `status` = '$member[status]', `position` = '$member[position]', `exec` = '$member[exec_access]' WHERE `id` = '$user_id' LIMIT 1";
 	//echo $sql . "<br/>";
 	$result = mysql_query($sql);
@@ -94,7 +94,7 @@ if (isset($_POST['submitted'])) {
 
 if (isset($_GET['filter'])) {
 	$filter = $_GET['filter'];
-	
+
 	if ($filter == 'Actives') {
 		$sql = "SELECT * FROM `contact_information` WHERE `status` = 'Active'";
 	} elseif ($filter == 'Inactives') {
@@ -118,7 +118,7 @@ if (isset($_GET['filter'])) {
 
 $positions_options = get_positions();
 ?>
-This page will help for mass edits to member statuses.  Click on a link below to filter to specific groups.  
+This page will help for mass edits to member statuses.  Click on a link below to filter to specific groups.
 
 <ul>
 <li>
@@ -156,7 +156,7 @@ This page will help for mass edits to member statuses.  Click on a link below to
 		<td>Position</td>
 		<td>Exec?</td>
 	</tr>
-	
+
 <?php
 list_members_status_form($sql, $positions_options);
 ?>
