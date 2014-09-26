@@ -25,10 +25,10 @@ if (!isset($_SESSION['sessionID'])) {
 			if (mysql_affected_rows() == 1) {
 				echo "Your password has been updated.";
 			} else {
-				echo "Your password was not changed.  Did you input the correct old password?  Click <a href='http://localhost/members_updatepw.php'>here</a> to try again.";
+				echo "Your password was not changed.  Did you input the correct old password?  Click <a href='http://apo.truman.edu/members_updatepw.php'>here</a> to try again.";
 			}
 		} else {
-			echo "Your new passwords did not match. Click <a href='http://localhost/members_updatepw.php'>here</a> to try again.";
+			echo "Your new passwords did not match. Click <a href='http://apo.truman.edu/members_updatepw.php'>here</a> to try again.";
 		}
 	} else {
 	

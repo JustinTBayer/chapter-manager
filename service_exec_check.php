@@ -119,7 +119,7 @@ function list_hours($user_id) {
 		}		
 		$fund = "";
 		if ($i['fundraising'] == 1) {
-			$fund = "<img src='http://localhost/layout_files/fundraising_coin.jpeg' style='vertical-align: middle;' title='Fundraising!' alt='Fundraising!'/>";
+			$fund = "<img src='http://apo.truman.edu/layout_files/fundraising_coin.jpeg' style='vertical-align: middle;' title='Fundraising!' alt='Fundraising!'/>";
 		}
 		echo "<tr $hours_line><td width='20%'>$i[event]</td>
 		<td width='15%'> $i[month] / $i[day] / $i[year] </td>

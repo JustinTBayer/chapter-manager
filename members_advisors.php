@@ -31,50 +31,50 @@ if (!isset($_SESSION['sessionID'])) {
  
 <p style="text-indent: 3em;">Faculty/administration/staff advisors are here to serve as a link between Epsilon and Truman State University, and should be in a position to help navigate some of the University policies. The Scouting/youth services advisor is to help the chapter provide service to youth across the nation (and in the Kirksville/Adair County area), an obligation we accept in the Fraternity oath. While that advisor may have affiliation with the Boy Scouts of America, it is not mandatory. The Community advisor(s) is/are there to help the chapter access the local community beyond the campus, or could assist the chapter with accessing the broader resources of Alpha Phi Omega at the national, regional and sectional level.</p>
 </div>
-<b>TB</b>
+<b>Tim Barcus</b>
 <ul>
 	<li>Faculty / Staff Advisor</li>
-	<li>Email: xxx</li>
-	<li>Office: xxx</li>
-	<li>Phone: xxx</li>
+	<li>Email: tbarcus@truman.edu</li>
+	<li>Office: KB 209</li>
+	<li>Phone: (660) 785-4224</li>
 </ul>
 
-<b>KH</b>
+<b>Kara Jo Humphrey</b>
 <ul>
 	<li>Faculty/Staff Advisor</li>
-	<li>Email: xxx</li>
-	<li>Office: xxx</li>
-	<li>Phone: xxx</li>
+	<li>Email: karah@truman.edu</li>
+	<li>Office: RTM 1010</li>
+	<li>Phone: (660) 665-0878</li>
 </ul>
 
-<b>KC</b>
+<b>Ken Carter</b>
 <ul>
 	<li>Scouting Advisor</li>
-	<li>Email: xxx</li>
-	<li>Office: xxx</li>
-	<li>Phone: xxx</li>
+	<li>Email: kcarter@truman.edu</li>
+	<li>Office: MG 3146</li>
+	<li>Phone: (660) 785-4628</li>
 </ul>
 
-<b>JR</b>
+<b>Jim Roach</b>
 <ul>
 	<li> Community Advisor</li>
-	<li> xxx</li>
-	<li> xxx</li>
+	<li> jwroach49@yahoo.com</li>
+	<li> (314) 330-6822</li>
 
 </ul>
 
-<b>MT</b>
+<b>Marlene Talbert</b>
 <ul>
 	<li>Community Advisor</li>
-	<li>Email: xxx</li>
-	<li>Phone: xxx</li>
+	<li>Email: druandmarlene@gmail.com</li>
+	<li>Phone: (660) 956-2716</li>
 </ul>
 
-<b>LC</b>
+<b>Linda "Mom" Caraway</b>
 <ul>
 	<li>Community Advisor</li>
-	<li>Email: xxx</li>
-	<li>Phone: xxx</li>
+	<li>Email: l.caraway@gmail.com</li>
+	<li>Phone: (660) 341-7548</li>
 </ul>
 </div>
 </div>

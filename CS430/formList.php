@@ -1,7 +1,7 @@
 <?
 
 function newPDO(){
-	return new PDO('mysql:host=localhost;dbname=apo', 'apo', 'dbPW');
+	return new PDO('mysql:host=mysql.truman.edu;dbname=apo', 'apo', 'glueallE17');
 }
 
 function validateForm(){

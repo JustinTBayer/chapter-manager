@@ -15,20 +15,20 @@ page_header();
 <ul id="css3menu1" class="topmenu">
 	<li class="topfirst"><a href="#" style="width:259px;height:15px;line-height:15px;"><span>Epsilon</span></a>
 	<ul>
-		<li class="subfirst"><a href="http://localhost/epsilon_bylaw.php">Bylaws</a></li>
-		<li><a href="http://localhost/epsilon_risk.php">Risk Management</a></li>
-		<li><a href="http://localhost/epsilon_jboard.php">Judicial Board</a></li>
+		<li class="subfirst"><a href="http://apo.truman.edu/epsilon_bylaw.php">Bylaws</a></li>
+		<li><a href="http://apo.truman.edu/epsilon_risk.php">Risk Management</a></li>
+		<li><a href="http://apo.truman.edu/epsilon_jboard.php">Judicial Board</a></li>
 	</ul>
 
 	</li>
 	<li class="topmenu"><a href="#" style="width:257px;height:15px;line-height:15px;"><span>National</span></a>
 	<ul>
-		<li class="subfirst"><a href="http://localhost/national_bylaws.php">Bylaws</a></li>
-		<li><a href="http://localhost/national_risk.php">Risk Management</a></li>
+		<li class="subfirst"><a href="http://apo.truman.edu/national_bylaws.php">Bylaws</a></li>
+		<li><a href="http://apo.truman.edu/national_risk.php">Risk Management</a></li>
 	</ul>
 
 	</li>
-	<li class="toplast"><a href="http://localhost/student_conduct.php" style="width:260px;height:15px;line-height:15px;">Student Code of Conduct</a></li>
+	<li class="toplast"><a href="http://apo.truman.edu/student_conduct.php" style="width:260px;height:15px;line-height:15px;">Student Code of Conduct</a></li>
 </ul>
 
 
@@ -37,7 +37,7 @@ page_header();
 
 
 <div style="clear:both" />
-<iframe src="http://docs.google.com/gview?url=http://localhost/Sergeant At Arms Info/APO Epsilon - J-Board2.pdf&embedded=true" style="width:840px; height:600px;color:#EBEBEB;" frameborder="0"></iframe>
+<iframe src="http://docs.google.com/gview?url=http://apo.truman.edu/Sergeant At Arms Info/APO Epsilon - J-Board2.pdf&embedded=true" style="width:840px; height:600px;color:#EBEBEB;" frameborder="0"></iframe>
 </div>
 <?php
 page_footer();

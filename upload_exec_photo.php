@@ -7,7 +7,7 @@ if((!empty($_FILES["uploaded_file"])) && ($_FILES['uploaded_file']['error'] == 0
   if (($ext == "jpg") && ($_FILES["uploaded_file"]["type"] == "image/jpeg") && 
     ($_FILES["uploaded_file"]["size"] < 350000)) {
     //Determine the path to which we want to save this file
-	$newname = 'http://localhost/personnel_images/378/'.$filename;
+	$newname = 'http://apo.truman.edu/personnel_images/378/'.$filename;
       //Check if the file with the same name is already exists on the server
       if (!file_exists($newname)) {
         //Attempt to move the uploaded file to it's new place

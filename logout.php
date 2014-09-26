@@ -14,7 +14,7 @@ echo "<div class='content'>";
 
 
 
-echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost">');
+echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu">');
 
 
 echo "</div>";

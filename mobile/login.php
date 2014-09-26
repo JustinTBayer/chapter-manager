@@ -20,7 +20,7 @@ require_once('../mysql_access.php');
 </head>
 <body>
  <div>
-      <div class="button" onclick="window.location = 'http://localhost/mobile.php';">Home</div>
+      <div class="button" onclick="window.location = 'http://apo.truman.edu/mobile.php';">Home</div>
       <h1>Alpha Phi Omega</h1>
 		<ul>
 <?php		
@@ -70,13 +70,13 @@ $select = "SELECT *
 		
 		session_start();
 		
-		// leave commented if PHP version >= 5.4 session_register('sessionUsername');
-		// leave commented if PHP version >= 5.4 session_register('sessionFirstname');
-		// leave commented if PHP version >= 5.4 session_register('sessionLastname');
-		// leave commented if PHP version >= 5.4 session_register('sessionexec');
-		// leave commented if PHP version >= 5.4 session_register('sessionposition');
-		// leave commented if PHP version >= 5.4 session_register('sessionID');	
-		// leave commented if PHP version >= 5.4 session_register('active_sem');
+		session_register('sessionUsername');
+		session_register('sessionFirstname');
+		session_register('sessionLastname');
+		session_register('sessionexec');
+		session_register('sessionposition');
+		session_register('sessionID');	
+		session_register('active_sem');
 		$_SESSION['sessionUsername'] = $username;
 		$_SESSION['sessionFirstname'] = $firstname;
 		$_SESSION['sessionLastname'] = $lastname;
@@ -90,11 +90,11 @@ $select = "SELECT *
 			echo("session set");
 		}
 		//the below code refreshed the page if the current user logs in.
-		//if(isset($_GET['continue'])){'<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/'.$continue.'">');}
+		//if(isset($_GET['continue'])){'<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/'.$continue.'">');}
 			$sql = "SELECT * FROM `contact_information` WHERE `lastname` = '".$lastname."' AND `firstname` = '".$firstname."' AND `username` = '".$username."'";
 		$result = mysql_query($sql);
 				
-			echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/mobile.php">');
+			echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/mobile.php">');
 			
 }}
 

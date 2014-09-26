@@ -33,9 +33,9 @@ function execs_in_position($result) {
 
 function exec_photo($result) {
 	if ($result[photo_code] == "") {
-		$url = "http://localhost/layout_files/Missing Face.png";
+		$url = "http://apo.truman.edu/layout_files/Missing Face.png";
 	} else {
-		$url = "http://localhost/exec_images/" . $result['photo_code'];
+		$url = "http://apo.truman.edu/exec_images/" . $result['photo_code'];
 	}
 	echo<<<END
 	<div class="photo">

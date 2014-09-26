@@ -145,7 +145,7 @@ if (isset($_POST['action']) && $_POST['action'] == "add_hour") {
 	$result = process_form();
 	if ($result == 1)
 	{
-		header('Location: http://localhost/mobile/check_hours.php' );
+		header('Location: http://apo.truman.edu/mobile/check_hours.php' );
 	}
 
 }
@@ -167,7 +167,7 @@ if (isset($_GET['delete'])) {
 ?>
 <link rel="stylesheet"
    type="text/css"
-   media="print" href="http://localhost/layout_files/print_styles.css" />
+   media="print" href="http://apo.truman.edu/layout_files/print_styles.css" />
 
 
 <div class="content">
@@ -198,7 +198,7 @@ echo<<<END
 </head>
 <body>
 <div>
-      <div class="button" onclick="window.location = 'http://localhost/index.php';">Home</div>
+      <div class="button" onclick="window.location = 'http://apo.truman.edu/index.php';">Home</div>
       <h1>Member Information</h1>
       	<ul>
       		<li class="arrow">
@@ -210,7 +210,7 @@ if($query2){
 echo
 <<<END
 <h2>Log Hours</h2> 
-<form action="http://localhost/mobile/service_hours.php" class="form" id="new_volunteer_time" method="post">
+<form action="http://apo.truman.edu/mobile/service_hours.php" class="form" id="new_volunteer_time" method="post">
 <p>
 	<label for="month">Date</label> 
 		<select name="month">

@@ -36,41 +36,94 @@ function process_login(){
 	
 	$username = addslashes($_POST["username"]);
 	$password = addslashes($_POST["password"]);
-
-	$select = "SELECT *
-	FROM `contact_information`
-	WHERE `username`='$username' AND `new_password`=PASSWORD('$password')";
-	$query = mysql_query($select) or die("If you encounter problems, please contact the webmaster: apo.epsilon.webmaster@gmail.com");
-	$r = mysql_fetch_array($query);
+	if ($username == 'alumni' AND $password == 'forgetmenot') {
+		
+		session_register('sessionUsername');
+		session_register('sessionFirstname');
+		session_register('sessionLastname');
+		session_register('sessionexec');
+		session_register('sessionID');
 	
-	if (!$r) {
-		print_login(1);
+		$_SESSION['sessionUsername'] = 'Alumni';
+		$_SESSION['sessionFirstname'] = 'Brother';
+		$_SESSION['sessionLastname'] = 'Alumni';
+		$_SESSION['sessionexec'] = '0';
+		$_SESSION['sessionID'] = 'Alumni';
+		
+		echo "<p>You have succesfully logged in as Alumni.</p>";
+
+	} elseif ($username == 'advisor' AND $password == 'helpinghand') {
+		
+		session_register('sessionUsername');
+		session_register('sessionFirstname');
+		session_register('sessionLastname');
+		session_register('sessionexec');
+		session_register('sessionID');
+	
+		$_SESSION['sessionUsername'] = 'Advisor';
+		$_SESSION['sessionFirstname'] = 'Advisor';
+		$_SESSION['sessionLastname'] = 'Advisor';
+		$_SESSION['sessionexec'] = '2';
+		$_SESSION['sessionID'] = 'Advisor';
+
+		echo "<p>You have succesfully logged in as an Advisor.</p>";
+
+
+//	} elseif ($username == 'exechelper' AND $password == 'leadership') {
+//		
+//		session_register('sessionUsername');
+//		session_register('sessionFirstname');
+//		session_register('sessionLastname');
+//		session_register('sessionexec');
+//		session_register('sessionID');
+//	
+//		$_SESSION['sessionUsername'] = 'exechelper';
+//		$_SESSION['sessionFirstname'] = 'exechelper';
+//		$_SESSION['sessionLastname'] = 'exechelper';
+//		$_SESSION['sessionexec'] = '1';
+//		$_SESSION['sessionID'] = 'exechelper';
+//
+//		if ($_SESSION['sessionexec']==1){
+//			print_exec_logout();
+//		}	
+//		else {
+//			print_logout();
+//		}
 	} else {
+		$select = "SELECT *
+		FROM `contact_information`
+		WHERE `username`='$username' AND `new_password`=PASSWORD('$password')";
+		$query = mysql_query($select) or die("If you encounter problems, please contact the webmaster: apo.epsilon.webmaster@gmail.com");
+		$r = mysql_fetch_array($query);
+		
+		if (!$r) {
+			print_login(1);
+		} else {
+	
+		extract($r);
+		
+		session_register('sessionUsername');
+		session_register('sessionFirstname');
+		session_register('sessionLastname');
+		session_register('sessionexec');
+		session_register('sessionposition');
+		session_register('sessionID');
+		
+		$_SESSION['sessionUsername'] = $username;
+		$_SESSION['sessionFirstname'] = $firstname;
+		$_SESSION['sessionLastname'] = $lastname;
+		$_SESSION['sessionposition'] = $position;
+		$_SESSION['sessionexec'] = $exec;
+		$_SESSION['sessionID'] = $id;
 
-	extract($r);
-	
-	// leave commented if PHP version >= 5.4 session_register('sessionUsername');
-	// leave commented if PHP version >= 5.4 session_register('sessionFirstname');
-	// leave commented if PHP version >= 5.4 session_register('sessionLastname');
-	// leave commented if PHP version >= 5.4 session_register('sessionexec');
-	// leave commented if PHP version >= 5.4 session_register('sessionposition');
-	// leave commented if PHP version >= 5.4 session_register('sessionID');
-	
-	$_SESSION['sessionUsername'] = $username;
-	$_SESSION['sessionFirstname'] = $firstname;
-	$_SESSION['sessionLastname'] = $lastname;
-	$_SESSION['sessionposition'] = $position;
-	$_SESSION['sessionexec'] = $exec;
-	$_SESSION['sessionID'] = $id;
-
-	echo "<p>You have logged in!</p>";
-	
-	$sql = "UPDATE `contact_information` SET `active_sem` = 'Fall2010' WHERE `id` = '$id'";
-	mysql_query($sql);
-	//echo $sql;
+		echo "<p>You have logged in!</p>";
+		
+		$sql = "UPDATE `contact_information` SET `active_sem` = 'Fall2010' WHERE `id` = '$id'";
+		mysql_query($sql);
+		//echo $sql;
+		}
 	}
 }
-
 
 function logout(){
       	unset($_SESSION['sessionUsername']);

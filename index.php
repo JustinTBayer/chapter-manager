@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();		
 require_once ('layout.php');
 require_once ('mysql_access.php');
@@ -18,7 +18,7 @@ $result = mysql_query($sql);
 while($row = mysql_fetch_array($result)){
 	global $current_semester;
 	if($row['active_sem'] != $current_semester){
-		header( 'Location: http://localhost/members_updateinfo.php?forced=true' ) ;
+		header( 'Location: http://apo.truman.edu/members_updateinfo.php?forced=true' ) ;
 	}
 }
 /*
@@ -29,12 +29,12 @@ if(mysql_num_rows(mysql_query($sql))>0){
 		$messages = "messages";
 	}
 	echo "&nbsp;{$firstname} {$lastname}, you have {$mysql_num_rows} new {$messages}. 
-	<a href=\"http://localhost/news.php\">read now</a><br/>";
+	<a href=\"http://apo.truman.edu/news.php\">read now</a><br/>";
 }
 */
 $sql = "SELECT risk_management FROM contact_information WHERE id = ".$id." AND risk_management = '0000-00-00'";
 if((mysql_num_rows(mysql_query($sql))==1)&&($_SESSION['sessionStatus'] != 'Pledge')){
-	echo "&nbsp;you have not taken your risk management quiz, <a href=\"http://localhost/risk_management_quiz.php\">take it now</a><br/>";
+	echo "&nbsp;you have not taken your risk management quiz, <a href=\"http://apo.truman.edu/risk_management_quiz.php\">take it now</a><br/>";
 }
 ?>
 <div id="user_meta_right"><?php 
@@ -61,7 +61,9 @@ Camp Silver Meadows, YMCA, Ray Miller, and Twin Pines Retirement Community.
 Epsilon also hosts a philanthropy event every fall and St. Baldricks in the
 spring!  Through friendship and service, Epsilon is poised to lead the
 Kirksville and Truman communities into the twenty-first century.<br/><p>
-<!--<a href="http://localhost/F13Rush.pdf">rush calendar</a>--></div>
+<!--<a href="http://apo.truman.edu/F13Rush.pdf">rush calendar</a>-->
+<h4> New pledges, follow <a href="./register.php">this link</a> to register for the site!</h4>
+</div>
 
 
 <div class="sidebar">

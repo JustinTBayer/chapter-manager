@@ -1,10 +1,10 @@
 <?php
 function newPDO(){
-	return new PDO('mysql:host=localhost;dbname=apo', 'apo', 'dbPW');
+	return new PDO('mysql:host=mysql.truman.edu;dbname=apo', 'apo', 'glueallE17');
 }
 /*
 sample usage
-$pdo = new PDO('mysql:host=$host;dbname=$db', 'apo', 'dbPW');
+$pdo = new PDO('mysql:host=$host;dbname=$db', 'apo', 'glueallE17');
 $statement = $pdo->query("SELECT firstname AS _firstname FROM contact_information");
 $row = $statement->fetch(PDO::FETCH_ASSOC);
 echo htmlentities($row['_firstname']);

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require_once('exec_email.php');
 
@@ -35,9 +35,9 @@ function execs_in_position($result) {
 
 function exec_photo($result) {
 	if ($result[photo_code] == "") {
-		$url = "http://localhost/layout_files/Missing Face.png";
+		$url = "http://apo.truman.edu/layout_files/Missing Face.png";
 	} else {
-		$url = "http://localhost/includes/exec_photos/" . $result['photo_code'];
+		$url = "http://apo.truman.edu/includes/exec_photos/" . $result['photo_code'];
 	}
 	echo<<<END
 	<div class="photo">
@@ -61,10 +61,10 @@ function last_upload($id) {
 		echo<<<END
 			<tr>
 			<!--<td>$r[folder] /</td>-->
-			<td><a href='http://localhost/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
+			<td><a href='http://apo.truman.edu/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
 			<!--<td>$r[date]</td>-->
 			</tr><br/>
-			<!--<a href='http://localhost/documents.php?folder=Blue%20and%20Gold'>
+			<!--<a href='http://apo.truman.edu/documents.php?folder=Blue%20and%20Gold'>
 			See more...</a>-->
 END;
 	}}

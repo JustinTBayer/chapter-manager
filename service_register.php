@@ -87,7 +87,7 @@ function select_by_dow($dow, $user_id){//dow = day of week
 		<td width='10%'></td>
 		<!--<td width='10%'>$note</td>-->
 		<td width='10%'></td>
-		<td width='10%'><a href='http://localhost/service_register.php?id=$user_id&p=$project_id'>sign up</a></td>
+		<td width='10%'><a href='http://apo.truman.edu/service_register.php?id=$user_id&p=$project_id'>sign up</a></td>
 		<td width='5%'></td>
 		</tr>";		
 		}

@@ -75,7 +75,7 @@ if (isset($_POST['action']) && $_POST['action'] == "log_event") {
 	$result = process_form();
 	if ($result == 1)
 	{
-		header('Location: http://localhost/Beads.php' );
+		header('Location: http://apo.truman.edu/Beads.php' );
 	}
 
 }
@@ -98,7 +98,7 @@ page_header();
 
 <link rel="stylesheet"
    type="text/css"
-   media="print" href="http://localhost/layout_files/print_styles.css" />
+   media="print" href="http://apo.truman.edu/layout_files/print_styles.css" />
 
 
 <div class="content">

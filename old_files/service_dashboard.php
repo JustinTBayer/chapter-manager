@@ -33,12 +33,12 @@ page_header();
 						if(!$result){echo('view issue');}
 						while($row = mysql_fetch_array($result)){
 						echo ($row['name'].', '.formal_date($row['yday']).' at: '.$row['hour'].':'.$row['min'].',  max persons: '.$row['max'].
-  							'   <a href="http://localhost/service_dashboard.php?drop=yes&event='.$row['P_Id'].'"><img src="http://localhost/imags/NO.png" width="10" title="register for this event"/></a><br />');}
+  							'   <a href="http://apo.truman.edu/service_dashboard.php?drop=yes&event='.$row['P_Id'].'"><img src="http://apo.truman.edu/imags/NO.png" width="10" title="register for this event"/></a><br />');}
 			if(isset($_GET['drop'])){	
 				$P_Id = $_GET['event'];
 				$sql = "DELETE FROM `kahuna` WHERE P_Iduser_id = ".$P_Id.$id."";
 					$result = mysql_query($sql);
-					echo('<meta http-equiv="refresh" content="0;URL=http://localhost/service_dashboard.php">');}
+					echo('<meta http-equiv="refresh" content="0;URL=http://apo.truman.edu/service_dashboard.php">');}
 			if(isset($_GET['register'])){
 				$P_Id = $_GET['event'];
 					$sql = "SELECT * FROM `service_master` WHERE `P_Id` = '".$P_Id."'";
@@ -66,7 +66,7 @@ page_header();
 					$sql = "INSERT INTO `kahuna` (P_Id, user_id, P_Iduser_id, name, max, hour, min, yday, formal_date, mo, day, year, date, semester, formal_date_m, formal_date_l, formal_date_ls) VALUES ('".$P_Id."','".$id."','".$P_Iduser_id."','".$name."','".$max."','".$hour."','".$min."','".$yday."','".$date."','".$mo."','".$day."','".$year."','".$old_date."','".$current_semester."','".$date_m."','".$date_l."','".$date_ls."')";
 						$result = mysql_query($sql);
 							if(!$result){echo('why would you need to register twice?');}
-							echo('<meta http-equiv="refresh" content="1;URL=http://localhost/service_dashboard.php">');
+							echo('<meta http-equiv="refresh" content="1;URL=http://apo.truman.edu/service_dashboard.php">');
 		}}
 		echo('</div><br /><br />');
 		echo('<div id="week_service_events">');
@@ -78,8 +78,8 @@ page_header();
 		 	$result = mysql_query($sql);
 		 	while($row = mysql_fetch_array($result)){
   				echo ($row['name'].', '.formal_date($row['yday']).' at: '.$row['hour'].':'.$row['min'].',  max persons: '.$row['max'].
-  				'   <a href="http://localhost/service_dashboard.php?register=yes&event='.$row['P_Id'].'"><img src="http://localhost/imags/OK.png" width="10" title="register for this event"/></a>'.
-  				'   <a href="http://localhost/service_dashboard.php?who=yes&event='.$row['P_Id'].'"><img src="http://localhost/imags/PERSON.png" width="10" title="show registered users"/></a><br />');}
+  				'   <a href="http://apo.truman.edu/service_dashboard.php?register=yes&event='.$row['P_Id'].'"><img src="http://apo.truman.edu/imags/OK.png" width="10" title="register for this event"/></a>'.
+  				'   <a href="http://apo.truman.edu/service_dashboard.php?who=yes&event='.$row['P_Id'].'"><img src="http://apo.truman.edu/imags/PERSON.png" width="10" title="show registered users"/></a><br />');}
 
 }else{}?>
 

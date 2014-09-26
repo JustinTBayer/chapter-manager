@@ -56,7 +56,7 @@ if (!isset($_SESSION['sessionID'])) {
 <?php 
 if(isset($_POST['submit'])){
 if($hours == 0){
-echo('You either have no hours logged for the specified period or you\'ve entered an unsupported option.<br />Please try again, if you believe that you\'ve found an error please contact the <a href="mailto:apo.epsilon.webmaster@gmail.com?subject=Service Hour Request&cc=logan@mccamon.org">Webmaster</a></h3>.');}else{
+echo('You either have no hours logged for the specified period or you\'ve entered an unsupported option.<br />Please try again, if you believe that you\'ve found an error please contact the <a href="mailto:lom1272@truman.edu?subject=Service Hour Request&cc=logan@mccamon.org">Webmaster</a></h3>.');}else{
 //echo($period.'<br />'.$id.'<br />'.$hours);
 echo('In '.$semester_of_query.$year_of_query.' you logged '.$hours.' hours.');
 }}}?>

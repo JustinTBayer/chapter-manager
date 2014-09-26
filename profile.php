@@ -6,9 +6,9 @@ page_header();
 echo ('<div class= "content">');
 
 function newPDO(){
-	$dsn = "mysql:host=localhost;dbname=apo";
+	$dsn = "mysql:host=mysql.truman.edu;dbname=apo";
 	$user = "apo";
-	$pass = "dbPW";
+	$pass = "glueallE17";
 	return new PDO($dsn, $user, $pass);
 }
 

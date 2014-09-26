@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*
 	$dateMap1 = array(0,6,5,4,3,2,1);
 	$currentDOW1 = date('w');//returns integer of DOW
@@ -161,7 +161,7 @@ if(isset($_POST['newWeekFormSubmit'])){
 	processNewWeek();
 }else{
 echo "<h2>Set-Up a new week ({$date1} to {$date2})</h2>";
-echo "<a href=\"http://localhost/service_admin_week.php\">back to dashboard</a><br/>";
+echo "<a href=\"http://apo.truman.edu/service_admin_week.php\">back to dashboard</a><br/>";
 initializeNewWeekForm();
 }
 ?> </div>

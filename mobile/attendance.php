@@ -8,7 +8,7 @@ echo <<<END
 </head>
 <body>
     <div>
-      <div class="button" onclick="window.location = 'http://localhost/mobile.php';">Home</div>
+      <div class="button" onclick="window.location = 'http://apo.truman.edu/mobile.php';">Home</div>
       <h1>Alpha Phi Omega</h1>
       <h2>My Attendance</h2>
 END;

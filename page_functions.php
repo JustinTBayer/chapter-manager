@@ -22,7 +22,7 @@ function _restoreOriginal($order){
 	if(!$result){
 		die (mysql_error());
 	}else{
-		echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/">');
+		echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/">');
 	}
 */
 	echo("Please contact the webmaster if you wish to revert to an earlier revision");
@@ -50,7 +50,7 @@ function _processForm(){
 	if(!$result){
 		die(mysql_error().$sql);
 	}else{
-		echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://localhost/">');
+		echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/">');
 	}
 
 }

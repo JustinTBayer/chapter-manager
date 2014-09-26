@@ -1,4 +1,4 @@
-﻿<?php/*
+<?php/*
 function str_rand($length = 8, $seeds = 'alphanum')
 {
     // Possible seeds
@@ -35,7 +35,7 @@ echo "Mail being prepared.";
 $mail = new PHPMailer();
 // connect to database 
 
-$db = mysql_connect("localhost", "apo", "dbPW"); 
+$db = mysql_connect("mysql.truman.edu", "apo", "glueallE17"); 
 if (!$db) { 
 	print "Error - Could not connect to mysql"; 
     exit; 
@@ -48,7 +48,7 @@ if (!$er) {
 
 $mail = new PHPMailer();
 $mail->IsSMTP();                                      // set mailer to use SMTP
-$mail->Host = "";  	//placeholder, enter mailer here
+$mail->Host = "mail.truman.edu";  	
 
 $select = "SELECT id, firstname, lastname, username, email
 		FROM contact_information

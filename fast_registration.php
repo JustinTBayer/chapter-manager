@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /* The purpose of this form is to faciliate easier registration for pledges
  * who have not taken it upon themselves to register within the first few weeks
@@ -99,7 +99,7 @@ echo <<<END
 		<strong>Thank you for registering with APO-Epsilon, $firstname $lastname <br/>
 		username: $username <br/>
 		password: $password <br/>
-		<meta http-equiv="refresh" content="2;URL='http://localhost/fast_registration.php'">
+		<meta http-equiv="refresh" content="2;URL='http://apo.truman.edu/fast_registration.php'">
 		</strong>
 
 END;

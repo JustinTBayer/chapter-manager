@@ -18,6 +18,6 @@
 
 </div>
 <div class="sidebar">
-<div style="width: 80%; margin: 5px; padding: 3px 3px 0px 3px; border: 1px solid black; -webkit-box-shadow: 3px 3px 3px #666;"><img src="http://localhost/images/goldsashes.jpg" style="width: 100%;"></div>
+<div style="width: 80%; margin: 5px; padding: 3px 3px 0px 3px; border: 1px solid black; -webkit-box-shadow: 3px 3px 3px #666;"><img src="http://apo.truman.edu/images/goldsashes.jpg" style="width: 100%;"></div>
 </div>
 <?php page_footer();?>

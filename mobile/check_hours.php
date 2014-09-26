@@ -8,7 +8,7 @@ echo <<<END
 </head>
 <body>
     <div>
-      <div class="button" onclick="window.location = 'http://localhost/mobile.php';">Home</div>
+      <div class="button" onclick="window.location = 'http://apo.truman.edu/mobile.php';">Home</div>
       <h1>Alpha Phi Omega</h1>
       <h2>My Hours</h2>
       <ul>
@@ -108,7 +108,7 @@ if (isset($_GET['delete'])) {
 
 <link rel="stylesheet"
    type="text/css"
-   media="print" href="http://localhost/layout_files/print_styles.css" />
+   media="print" href="http://apo.truman.edu/layout_files/print_styles.css" />
 
 
 <?php

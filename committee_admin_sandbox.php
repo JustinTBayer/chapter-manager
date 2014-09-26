@@ -188,7 +188,7 @@ function process_new($user_id, $position){//success.
 			WHERE position = '".$position."'";
 		$result = mysql_query($sql);
 		if($result){
-			echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://localhost/committee_admin.php\">");
+			echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://apo.truman.edu/committee_admin.php\">");
 		}
 }
 
@@ -301,7 +301,7 @@ END;
 					$lastname = $row['lastname'];
 				}
 			echo("<input type=\"checkbox\" name=\"attended[]\" value=\"$value\">{$lastname}, $firstname
-				<a href=\"http://localhost/committee_admin.php?remove={$value}&p={$position_id}\">remove?</a><br>");
+				<a href=\"http://apo.truman.edu/committee_admin.php?remove={$value}&p={$position_id}\">remove?</a><br>");
 		}
 		
 		echo("<hr/>");
@@ -398,7 +398,7 @@ $id = $_SESSION['sessionID'];
 if($dev == 1){echo("you do not have permission to view this page.");
 }else{
 ?>
-<a href="http://localhost/committee_admin.php">reset</a><br/>
+<a href="http://apo.truman.edu/committee_admin.php">reset</a><br/>
 <?php
  
 if (isset($_POST['new']) && ('display' == $_POST['new'])) { 

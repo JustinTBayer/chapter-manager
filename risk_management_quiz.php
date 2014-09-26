@@ -97,7 +97,7 @@ function passed_quiz() {
 }
 
 function print_quiz($quiz,$right_answers) {
-	echo "<p>You are required to pass a risk management quiz once a year.  To pass the quiz, you must answer all 11 questions correctly.  You can take the quiz as many times as you need.  If you want to read the Risk Management policy you can find it here: <a href='http://localhost/Sergeant%20At%20Arms%20Info/APO%20Epsilon%20-%20Risk%20Mgmt.pdf'>Risk Management</a>.</p>";
+	echo "<p>You are required to pass a risk management quiz once a year.  To pass the quiz, you must answer all 11 questions correctly.  You can take the quiz as many times as you need.  If you want to read the Risk Management policy you can find it here: <a href='http://apo.truman.edu/Sergeant%20At%20Arms%20Info/APO%20Epsilon%20-%20Risk%20Mgmt.pdf'>Risk Management</a>.</p>";
 	echo "<form method='post'>";
 	foreach ($quiz as $quiz_item) {
 		print_question($quiz_item);

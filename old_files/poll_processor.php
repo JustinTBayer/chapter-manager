@@ -24,7 +24,7 @@ $question_id = $question_id_pre+1;
 echo($question_id);
 	echo($_POST['1']);
 		if($_POST['1'] = 'no'){
-			echo('Thank you for responding!<meta http-equiv="refresh" content="1;url=http://localhost/polls.php">');}
+			echo('Thank you for responding!<meta http-equiv="refresh" content="1;url=http://apo.truman.edu/polls.php">');}
 //when received, get user param
 //validate against response database
 //if all good, figure out where they go next,

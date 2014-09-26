@@ -20,7 +20,7 @@ if (isset($_SESSION['sessionID'])){
 			echo<<<END
 				<tr>
 				<td>$r[folder] /</td>
-				<td><a href='http://localhost/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
+				<td><a href='http://apo.truman.edu/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
 				<td>$r[date]</td>
 				</tr>
 END;
@@ -45,7 +45,7 @@ END;
 			echo<<<END
 				<tr>
 				<td>$r[folder] /</td>
-				<td><a href='http://localhost/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
+				<td><a href='http://apo.truman.edu/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
 				<td>$r[date]</td>
 				</tr>
 END;

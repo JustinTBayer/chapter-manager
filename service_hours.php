@@ -158,7 +158,7 @@ if (isset($_POST['action']) && $_POST['action'] == "add_hour") {
 	$result = process_form();
 	if ($result == 1)
 	{
-		header('Location: http://localhost/service_hours.php' );
+		header('Location: http://apo.truman.edu/service_hours.php' );
 	}
 
 }
@@ -182,7 +182,7 @@ page_header();
 
 <link rel="stylesheet"
    type="text/css"
-   media="print" href="http://localhost/layout_files/print_styles.css" />
+   media="print" href="http://apo.truman.edu/layout_files/print_styles.css" />
 
 
 <div class="content">
@@ -208,8 +208,8 @@ global $current_semester;
 global $next_semester;
 echo<<<END
 <h1>Service Hours</h1>
-<!--<h3>Check your hours from previous semesters <a href="http://localhost/service_hours_history.php">here</a></h3>-->
-<h3><a href="http://localhost/service_dashboard.php">Feb-25 to Feb-28 Sign-Up List</a></h3>
+<!--<h3>Check your hours from previous semesters <a href="http://apo.truman.edu/service_hours_history.php">here</a></h3>-->
+<h3><a href="http://apo.truman.edu/service_dashboard.php">Feb-25 to Feb-28 Sign-Up List</a></h3>
 
 </div>
 

@@ -12,7 +12,7 @@ page_header();
 <p>To make an update, log into your <a href='http://gmail.truman.edu/'>Gmail Truview Email account</a>.  When logged in, in the top left corner are several options, choose Calendars.</p>
 
 <p align="center">
-<img src="http://localhost/layout_files/Calendar1.png" />
+<img src="http://apo.truman.edu/layout_files/Calendar1.png" />
 </p>
 
 <p>

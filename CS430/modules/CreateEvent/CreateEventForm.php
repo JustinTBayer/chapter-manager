@@ -2,9 +2,9 @@
 require_once('module.php');
 $Header = new header();
 $include = array();
-$include[] = '<link rel="stylesheet" type="text/css" href="http://localhost/CS430/includes/bootstrap/css/bootstrap.min.css"/>';
-$include[] = '<link rel="stylesheet" type="text/css" href="http://localhost/CS430/includes/bootstrap/css/bootstrap-response.min.css"/>';
-$include[] = '<link rel="stylesheet" type="text/css" href="http://localhost/CS430/modules/CreateEvent/CreateEventForm.css"/>';
+$include[] = '<link rel="stylesheet" type="text/css" href="http://apo.truman.edu/CS430/includes/bootstrap/css/bootstrap.min.css"/>';
+$include[] = '<link rel="stylesheet" type="text/css" href="http://apo.truman.edu/CS430/includes/bootstrap/css/bootstrap-response.min.css"/>';
+$include[] = '<link rel="stylesheet" type="text/css" href="http://apo.truman.edu/CS430/modules/CreateEvent/CreateEventForm.css"/>';
 $include[] = '<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>';
 $Header->head($include);
 

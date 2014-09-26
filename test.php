@@ -14,5 +14,5 @@ function curPageURL() {
 $curPageURLResult = curPageURL();
 
 echo $curPageURLResult;
-echo "<meta http-equiv=\"refresh\" content=\"0;url=http://localhost/bootstrap/index.php?u=$curPageURLResult\"/>";
+echo "<meta http-equiv=\"refresh\" content=\"0;url=http://apo.truman.edu/bootstrap/index.php?u=$curPageURLResult\"/>";
 ?>

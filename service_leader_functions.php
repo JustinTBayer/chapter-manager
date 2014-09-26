@@ -1,7 +1,7 @@
 <?php
 
 function refresh(){
-	echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://localhost/service_leader_dashboard.php\">");
+	echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://apo.truman.edu/service_leader_dashboard.php\">");
 }
 
 function processNew(){
@@ -275,7 +275,7 @@ $result = mysql_query($sql);
 			}
 			
 			if($i!=2){
-				echo ($DOW." ".$theDate." ".$name." start:".$start." end:".$end." count:".$count." max:".$max." <a href=\"http://localhost/service_leader_dashboard.php?d=".$detail_id."&z=".$i.$additional_info."&o=".$occurrence_id."\">view</a> <br/>");
+				echo ($DOW." ".$theDate." ".$name." start:".$start." end:".$end." count:".$count." max:".$max." <a href=\"http://apo.truman.edu/service_leader_dashboard.php?d=".$detail_id."&z=".$i.$additional_info."&o=".$occurrence_id."\">view</a> <br/>");
 			}else{
 				echo ($DOW." ".$theDate." ".$name." start:".$start." end:".$end." count:".$count." max:".$max."<br/>");
 			}

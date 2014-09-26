@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once ('layout.php');
 require_once ('mysql_access.php');
 
@@ -14,7 +14,7 @@ if (!isset($_SESSION['sessionID'])) {
 
 echo<<<END
 <h1>Member Information</h1>
-<p>Here you can find a list of members in Epsilon (who have registered on the website).  If you wish to update your information displayed here, please go <a href="http://localhost/members_updateinfo.php">here</a>.</p>
+<p>Here you can find a list of members in Epsilon (who have registered on the website).  If you wish to update your information displayed here, please go <a href="http://apo.truman.edu/members_updateinfo.php">here</a>.</p>
 <form method="GET">
 <table>
 

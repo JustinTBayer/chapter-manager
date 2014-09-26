@@ -68,7 +68,7 @@ function exec_email($result) {
 		echo "apo.epsilon.redcross@gmail.com";
 	}
 	elseif ($result == get_exec_info(27)){
-		echo "apo.epsilon.umoc@gmail.com";
+		echo "apo.epsilon.philanthropy@gmail.com";
 	}
 	elseif($result == get_exec_info(31)){
 		echo "apo.epsilon.stbaldricks@gmail.com";

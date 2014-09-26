@@ -20,7 +20,7 @@ class Header {
 			<!DOCTYPE html>
 			<head>
 				<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-				<!--<link rel="stylesheet" type="text/css" href="http://localhost/includes/css/styles.css"/>-->
+				<!--<link rel="stylesheet" type="text/css" href="http://apo.truman.edu/includes/css/styles.css"/>-->
 			';
 			
 			foreach($item as $i){

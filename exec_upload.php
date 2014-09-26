@@ -161,11 +161,11 @@ if (isset($_GET['action']) && ($_SESSION['sessionexec'] == 1)) {
 		echo<<<END
 			<tr>
 			<td>$r[folder] /</td>
-			<td><a href='http://localhost/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
+			<td><a href='http://apo.truman.edu/exec_document.php?id=$r[id]&folder=$r[folder]'> $r[name] </a></td>
 			<td>$r[date]</td>
 			<td>$r[size]</td>
 			<td>$r[firstname] $r[lastname]</td>
-			<td><a href='http://localhost/exec_upload.php?id=$r[id]&action=delete' style='text-decoration: none;'><sup>Delete?</sup></a></td>
+			<td><a href='http://apo.truman.edu/exec_upload.php?id=$r[id]&action=delete' style='text-decoration: none;'><sup>Delete?</sup></a></td>
 			</tr>
 END;
 	}

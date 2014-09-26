@@ -5,7 +5,7 @@ page_header();
 echo("<div class=\"content\">");
 
 if(!isset($_SESSION['sessionID'])){
-	header("http://localhost/login.php");
+	header("http://apo.truman.edu/login.php");
 }
 
 if(!isset($_SESSION['permissions'])){

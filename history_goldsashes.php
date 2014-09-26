@@ -1,9 +1,9 @@
-<?php
+﻿<?php
 require_once ('layout.php');
 page_header();
 ?>
 <div class="content">
-<p align="justify"><img border="0" src="http://localhost/images/goldsashes.jpg" width="315" height="189" align="right" style="border: 5px solid #FFFFFF; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
+<p align="justify"><img border="0" src="http://apo.truman.edu/images/goldsashes.jpg" width="315" height="189" align="right" style="border: 5px solid #FFFFFF; padding-left: 4px; padding-right: 4px; padding-top: 1px; padding-bottom: 1px">
 The Gold Sash is an award that recognizes actives, advisors or alumni of the Epsilon chapter of Alpha Phi Omega who exemplify leadership, friendship and service above and beyond the call of duty.  This award also is unique in that Gold Sash recipients are only unanimously selected by current Gold Sash recipients.  This award is presented to recipients at formal, and is a gold lame´ sash worn over the shoulder.
 The Gold Sash was first awarded at Epsilon's "Golden Eagle Banquet" formal on April 13, 1985.  Section 49 Chair Eddie Mackie created the Gold Sash award and bestowed it upon its inaugural recipients (please see the accompanying PDF file for more).</p>
 <br>

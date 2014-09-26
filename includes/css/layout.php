@@ -32,7 +32,7 @@ function page_header() {
 		if ($_SESSION['active_sem'] != $current_semester) {
 			if (($_SERVER["REQUEST_URI"] != "/members_updateinfo.php?forced=true") AND ($_SERVER["REQUEST_URI"] != "/members_updateinfo.php")) {
 
-					header( 'Location: http://localhost/members_updateinfo.php?forced=true' ) ;
+					header( 'Location: http://apo.truman.edu/members_updateinfo.php?forced=true' ) ;
 
 			} 
 		}
@@ -42,28 +42,28 @@ function page_header() {
 	// Temporary Code while working on website
 //	if (!isset($_SESSION['sessionID']) AND $_SERVER["REQUEST_URI"] != "/login.php" AND $_SERVER["REQUEST_URI"] != "/register.php") {
 
-//			header( 'Location: http://localhost/index.html' ) ;
+//			header( 'Location: http://apo.truman.edu/index.html' ) ;
 
 //	} 
 	
 	if (!isset($_SESSION['sessionID'])) {
-		$login_logout_links = '<li class="toplast"><a href="http://localhost/login.php" style="width:260px;height:15px;line-height:15px;">Login</a></li>';
+		$login_logout_links = '<li class="toplast"><a href="http://apo.truman.edu/login.php" style="width:260px;height:15px;line-height:15px;">Login</a></li>';
 	} else if ($_SESSION['sessionexec'] == 1) {
 		$id = $_SESSION['sessionID'];
 		$login_logout_links = "
 		<li class='topmenu'><a href='#' style='width:118px;height:15px;line-height:15px;'><span>Executive</span></a>
 			<ul>	
-				<li class='subfirst'><a href='http://localhost/exec_upload.php' title='Executive 7'>Upload Document</a></li>
-				<li><a href='http://localhost/exec_notes.php' title='Executive 6'>Executive Notes</a></li>
-				<li><a href='http://localhost/service_exec_check.php' title='Executive 5'>Check Hours</a></li>
-				<li><a href='http://localhost/attendance_exec_check.php' title='Executive 5'>Check Attendance</a></li>
-				<li><a href='http://localhost/attendance_admin.php' title='Attendance'>Attendance</a></li>
-				<li><a href='http://localhost/committee_admin.php' title='Committee Manager'>Committee Manager</a></li>
-				<li><a href='http://localhost/exec_calendar.php' title='Calendar Guide'>Calendar Guide</a></li>
-				<li><a href='http://localhost/exec_set_board.php' title='Edit Exec. Board'>Edit Exec. Board</a></li>
-				<li><a href='http://localhost/exec_member_status.php' title='Edit Statuses'>Edit Statuses</a></li>
-				<li><a href='http://localhost/exec_taken_quiz.php' title='Risk Management Records'>Risk Management Records</a></li>
-			"./*<li><a href='http://localhost/service_hours_month2.php' title='Executive 0'>Monthly Service Hours</a></li>
+				<li class='subfirst'><a href='http://apo.truman.edu/exec_upload.php' title='Executive 7'>Upload Document</a></li>
+				<li><a href='http://apo.truman.edu/exec_notes.php' title='Executive 6'>Executive Notes</a></li>
+				<li><a href='http://apo.truman.edu/service_exec_check.php' title='Executive 5'>Check Hours</a></li>
+				<li><a href='http://apo.truman.edu/attendance_exec_check.php' title='Executive 5'>Check Attendance</a></li>
+				<li><a href='http://apo.truman.edu/attendance_admin.php' title='Attendance'>Attendance</a></li>
+				<li><a href='http://apo.truman.edu/committee_admin.php' title='Committee Manager'>Committee Manager</a></li>
+				<li><a href='http://apo.truman.edu/exec_calendar.php' title='Calendar Guide'>Calendar Guide</a></li>
+				<li><a href='http://apo.truman.edu/exec_set_board.php' title='Edit Exec. Board'>Edit Exec. Board</a></li>
+				<li><a href='http://apo.truman.edu/exec_member_status.php' title='Edit Statuses'>Edit Statuses</a></li>
+				<li><a href='http://apo.truman.edu/exec_taken_quiz.php' title='Risk Management Records'>Risk Management Records</a></li>
+			"./*<li><a href='http://apo.truman.edu/service_hours_month2.php' title='Executive 0'>Monthly Service Hours</a></li>
 			*/"	
 			
 			</ul>
@@ -73,7 +73,7 @@ function page_header() {
 		$login_logout_links = "
 		<li class='topmenu'><a href='#' style='width:118px;height:15px;line-height:15px;'><span>Executive</span></a>
 			<ul>	
-				<li><a href='http://localhost/service_exec_check.php' title='Executive 5'>Check Hours</a></li>
+				<li><a href='http://apo.truman.edu/service_exec_check.php' title='Executive 5'>Check Hours</a></li>
 			</ul>
 	    </li> 
 		<li class='toplast'><a href='logout.php'style='width:260px;height:15px;line-height:15px;'>Logout</a></li>";
@@ -89,7 +89,7 @@ function page_header() {
 //		$result = mysql_query($sql);
 //		$row = mysql_fetch_array($result);
 //		if (($row[risk_management] < "2010-10-01") and ($row[status] == "Active" OR $row[status] == "Associate")) {
-//			$bother = "<marquee behavior='scroll' direction='left'><font color='red'>Please take the risk management quiz! <a href='http://localhost/risk_management_quiz.php'>TAKE TEST HERE!</a></font></marquee>";
+//			$bother = "<marquee behavior='scroll' direction='left'><font color='red'>Please take the risk management quiz! <a href='http://apo.truman.edu/risk_management_quiz.php'>TAKE TEST HERE!</a></font></marquee>";
 //		}
 //	}
 	
@@ -118,15 +118,15 @@ function page_header() {
 
 <div id="navigation">
 <ul id="css3menu1" class="topmenu">
-	<li class="topfirst"><a href="http://localhost/index.php" style="width:120px;height:15px;line-height:15px;">Home</a></li>
+	<li class="topfirst"><a href="http://apo.truman.edu/index.php" style="width:120px;height:15px;line-height:15px;">Home</a></li>
 	<li class="topmenu"><a href="#" style="width:118px;height:15px;line-height:15px;"><span>About APO</span></a>
 	<ul>
-		<li class="subfirst"><a href="http://localhost/rushapo.php" title="About APO 1">Join APO</a></li>
-		<li><a href="http://localhost/history.php" title="History">History</a></li>
-		<li><a href="http://localhost/history_impdates.php">Important Dates</a></li>
-		<li><a href="http://localhost/history_awards.php" title="Awards">Awards</a></li>
-		<li><a href="http://localhost/history_traditions.php" title="Traditions">Traditions</a></li>
-		<li><a href="http://localhost/Rush_Calendar.php" title="Rush Calendar">Rush Calendar</a></li>
+		<li class="subfirst"><a href="http://apo.truman.edu/rushapo.php" title="About APO 1">Join APO</a></li>
+		<li><a href="http://apo.truman.edu/history.php" title="History">History</a></li>
+		<li><a href="http://apo.truman.edu/history_impdates.php">Important Dates</a></li>
+		<li><a href="http://apo.truman.edu/history_awards.php" title="Awards">Awards</a></li>
+		<li><a href="http://apo.truman.edu/history_traditions.php" title="Traditions">Traditions</a></li>
+		<li><a href="http://apo.truman.edu/Rush_Calendar.php" title="Rush Calendar">Rush Calendar</a></li>
 	</ul>
 
 	</li>
@@ -134,33 +134,33 @@ function page_header() {
 	<ul>
 		<li class="subfirst"><a href="#" title="Large Service"><span>Elected</span></a>
 		<ul>
-			<li class="subfirst"><a href="http://localhost/officer_template.php?id=1" title="Elected 15">President</a></li>
-			<li><a href="http://localhost/officer_template.php?id=2" title="Elected 14">Large Service</a></li>
-			<li><a href="http://localhost/officer_template.php?id=3" title="Elected 3">Regular Service</a></li>
-			<li><a href="http://localhost/officer_template.php?id=6" title="Elected 13">Membership</a></li>
-			<li><a href="http://localhost/officer_template.php?id=4" title="Elected 12">Pledging</a></li>
-			<li><a href="http://localhost/officer_template.php?id=7" title="Elected 11">Sergeant at Arms</a></li>
-			<li><a href="http://localhost/officer_template.php?id=8" title="Elected 10">Public Relations</a></li>
-			<li><a href="http://localhost/officer_template.php?id=9" title="Elected 9">Recording Secretary</a></li>
-			<li><a href="http://localhost/officer_template.php?id=10" title="Treasurer">Treasurer</a></li>
-			<li><a href="http://localhost/officer_template.php?id=11" title="Scouting">Scouting</a></li>
-			<li><a href="http://localhost/officer_template.php?id=12" title="Elected 6">Brotherhood</a></li>
-			<li><a href="http://localhost/officer_template.php?id=13" title="Alumni">Alumni</a></li>
-			<li><a href="http://localhost/officer_template.php?id=14" title="Communications">Communications</a></li>
-			<li><a href="http://localhost/officer_template.php?id=15" title="Elected 0">Chaplain</a></li>
+			<li class="subfirst"><a href="http://apo.truman.edu/officer_template.php?id=1" title="Elected 15">President</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=2" title="Elected 14">Large Service</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=3" title="Elected 3">Regular Service</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=6" title="Elected 13">Membership</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=4" title="Elected 12">Pledging</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=7" title="Elected 11">Sergeant at Arms</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=8" title="Elected 10">Public Relations</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=9" title="Elected 9">Recording Secretary</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=10" title="Treasurer">Treasurer</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=11" title="Scouting">Scouting</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=12" title="Elected 6">Brotherhood</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=13" title="Alumni">Alumni</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=14" title="Communications">Communications</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=15" title="Elected 0">Chaplain</a></li>
 		</ul>
 
 		</li>
 		<li><a href="#" title="Regular Service"><span>Appointed</span></a>
 		<ul>
-			<li class="subfirst"><a href="http://localhost/officer_template.php?id=16" title="Appointed 0">Rush</a></li>
-			<li><a href="http://localhost/officer_template.php?id=17" title="Appointed 7">Historian</a></li>
-			<li><a href="http://localhost/officer_template.php?id=25" title="Appointed 6">Fundraising</a></li>
-			<li><a href="http://localhost/officer_template.php?id=18" title="Appointed 5">Formal</a></li>
-			<li><a href="http://localhost/officer_template.php?id=19" title="Appointed 4">Inter-Chapter Relations</a></li>
-			<li><a href="http://localhost/officer_template.php?id=20" title="Appointed 3">Webmaster</a></li>
-			<li><a href="http://localhost/officer_template.php?id=26" title="Appointed 2">Red Cross</a></li>
-			<li><a href="http://localhost/officer_template.php?id=27" title="Appointed 1">Ugly Man on Campus</a></li>
+			<li class="subfirst"><a href="http://apo.truman.edu/officer_template.php?id=16" title="Appointed 0">Rush</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=17" title="Appointed 7">Historian</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=25" title="Appointed 6">Fundraising</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=18" title="Appointed 5">Formal</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=19" title="Appointed 4">Inter-Chapter Relations</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=20" title="Appointed 3">Webmaster</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=26" title="Appointed 2">Red Cross</a></li>
+			<li><a href="http://apo.truman.edu/officer_template.php?id=27" title="Appointed 1">Ugly Man on Campus</a></li>
 		</ul>
 
 		</li>
@@ -169,20 +169,20 @@ function page_header() {
 	</li>
 	<li class="topmenu"><a href="#" style="width:118px;height:15px;line-height:15px;"><span>Members</span></a>
 	<ul>
-		<li class="subfirst"><a href="http://localhost/service_hours.php" title="Members 11">Hours</a></li>
-		<li><a href="http://localhost/members_updateinfo.php" title="Update Information">Update Information</a></li>
-		<li><a href="http://localhost/attendance.php" title="Attendance">My Attendance</a></li>
-		<li><a href="http://localhost/documents.php" title="Documents">Documents</a></li>
-		<li><a href="http://localhost/service_facts.php" title="Top Recorded Hours">Top Recorded Hours</a></li>
-		<li><a href="http://localhost/index_bylaw.php" title="APO Bylaws"><span>APO Bylaws</span></a></li>
-		<li><a href="http://localhost/members_list.php" title="Members Contact Information">Members Contact Information</a></li>
-		<li><a href="http://localhost/members_exec_list.php" title="Officers Contact Information">Officers Contact Information</a></li>
-		<li><a href="http://localhost/members_advisors.php" title="Advisors Contact Information">Advisors Contact Information</a></li>
-		<li><a href="http://localhost/members_pledging.php" title="Pledging Contact Information">Pledging Contact Information</a></li>
-		<li><a href="http://localhost/family_tree.php" title="Family Tree">Family Tree</a></li>
-		<li><a href="http://localhost/officers_committee_times.php" title="Committee Times">Committee Times</a></li>
-		<li><a href="http://localhost/risk_management_quiz.php" title="Risk Management Quiz">Risk Management Quiz</a></li>
-		<li><a href="http://localhost/calendar.php" title="Master Calendar">Master Calendar</a></li>
+		<li class="subfirst"><a href="http://apo.truman.edu/service_hours.php" title="Members 11">Hours</a></li>
+		<li><a href="http://apo.truman.edu/members_updateinfo.php" title="Update Information">Update Information</a></li>
+		<li><a href="http://apo.truman.edu/attendance.php" title="Attendance">My Attendance</a></li>
+		<li><a href="http://apo.truman.edu/documents.php" title="Documents">Documents</a></li>
+		<li><a href="http://apo.truman.edu/service_facts.php" title="Top Recorded Hours">Top Recorded Hours</a></li>
+		<li><a href="http://apo.truman.edu/index_bylaw.php" title="APO Bylaws"><span>APO Bylaws</span></a></li>
+		<li><a href="http://apo.truman.edu/members_list.php" title="Members Contact Information">Members Contact Information</a></li>
+		<li><a href="http://apo.truman.edu/members_exec_list.php" title="Officers Contact Information">Officers Contact Information</a></li>
+		<li><a href="http://apo.truman.edu/members_advisors.php" title="Advisors Contact Information">Advisors Contact Information</a></li>
+		<li><a href="http://apo.truman.edu/members_pledging.php" title="Pledging Contact Information">Pledging Contact Information</a></li>
+		<li><a href="http://apo.truman.edu/family_tree.php" title="Family Tree">Family Tree</a></li>
+		<li><a href="http://apo.truman.edu/officers_committee_times.php" title="Committee Times">Committee Times</a></li>
+		<li><a href="http://apo.truman.edu/risk_management_quiz.php" title="Risk Management Quiz">Risk Management Quiz</a></li>
+		<li><a href="http://apo.truman.edu/calendar.php" title="Master Calendar">Master Calendar</a></li>
 		
 	</ul>
 
@@ -217,8 +217,8 @@ echo <<<END
         Kirksville, MO
       </p> 
       <p> 
-       Issues? Please contact the <a href="http://localhost/officer_template.php?id=20">Webmaster</a>
-       <!--Issues? Please contact the <a href="mailto:apo.epsilon.webmaster@gmail.com?subject=Website Issue&cc=logan@mccamon.org">Webmaster</a>-->
+       Issues? Please contact the <a href="http://apo.truman.edu/officer_template.php?id=20">Webmaster</a>
+       <!--Issues? Please contact the <a href="mailto:lom1272@truman.edu?subject=Website Issue&cc=logan@mccamon.org">Webmaster</a>-->
       </p> 
 </div>
 

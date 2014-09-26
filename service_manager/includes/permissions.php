@@ -2,7 +2,7 @@
 function permission_set(){
 
 $permissions = array("VP","PL","Standard","Webmaster");
-// leave commented if PHP version >= 5.4 session_register('permissions');
+session_register('permissions');
 //SELECT INFO ABOUT THE USER TO SEE WHO THEY ARE
 //Register the appropriate session variable
 

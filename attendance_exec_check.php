@@ -144,7 +144,7 @@ echo("</table></div>");}
 }
 
 $id = $_SESSION['sessionID'];
-if($id != 268 && $id != 378 && $id != 512 && $id != 401 && $id != 426){echo("you do not have permission to view this page.");
+if($id != 268 && $id != 378 && $id != 512 && $id != 401 && $id != 550){echo("you do not have permission to view this page.");
 }else{
 
 //$sql = "SELECT `id`,`firstname`, `lastname` FROM `contact_information` WHERE `active_sem` = '$current_semester' ORDER BY `firstname`";

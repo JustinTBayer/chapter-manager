@@ -6,7 +6,7 @@ require_once('module.php');
 //$Header->head();
 
 /*
-  include('http://localhost/CS430/classes/DateConvert.php'); // Include our module
+  include('http://apo.truman.edu/CS430/classes/DateConvert.php'); // Include our module
   //$Date = new DateConvert();
   
   		$function = 'hi';

@@ -73,8 +73,8 @@ function addField(area,field,limit) {
 <?php if($id){
 			if(isset($_POST["submit"])){
 			if($num_changed == 0){
-		echo('Your response was NOT recorded, perhaps you\'ve already responded to this poll?<br />If you think that you have received this notice in error, please contact the webmaster.<br /><a href="http://localhost/polls.php">go back</a>');}
-		else{echo('Your response has been recorded.<br /><a href="http://localhost/polls.php">go back</a>');}}
+		echo('Your response was NOT recorded, perhaps you\'ve already responded to this poll?<br />If you think that you have received this notice in error, please contact the webmaster.<br /><a href="http://apo.truman.edu/polls.php">go back</a>');}
+		else{echo('Your response has been recorded.<br /><a href="http://apo.truman.edu/polls.php">go back</a>');}}
 		
 				$poll = $_GET['poll'];
 				$start = $_GET['start'];
@@ -121,7 +121,7 @@ function addField(area,field,limit) {
 						$firstname = $row2['firstname'];
 						$lastname = $row2['lastname'];
 				}
-					echo('<a href="http://localhost/polls.php?start=yes&poll='.$poll_id[$a].'">'.$poll_name[$a].'</a><br />');}
+					echo('<a href="http://apo.truman.edu/polls.php?start=yes&poll='.$poll_id[$a].'">'.$poll_name[$a].'</a><br />');}
 		if ($id == 9399393939){//$_SESSION['sessionexec'] == 1 || $id == 270) {
 			
 			echo('<hr /><h3>Your Polls</h3>');
@@ -132,8 +132,8 @@ function addField(area,field,limit) {
 					while($my_polls = mysql_fetch_array($result)){
 						$my_poll_name[$a] = $my_polls['name'];
 						$my_polls_id[$a] = $my_polls['id'];		
-					echo('<a href="http://localhost/polls.php?poll='.$my_polls_id[$a].'&check=yes">'.$my_poll_name[$a].'</a><br />');}
-			echo('<br /><hr /><a href="http://localhost/polls.php?new=yes">Add New</a>');}
+					echo('<a href="http://apo.truman.edu/polls.php?poll='.$my_polls_id[$a].'&check=yes">'.$my_poll_name[$a].'</a><br />');}
+			echo('<br /><hr /><a href="http://apo.truman.edu/polls.php?new=yes">Add New</a>');}
 		//are they exec? yes: query to see if they have any polls. No?: do nothing; yes: show their polls and the title
 		//are they exec? yes: add link to display 'create a poll' by using a get within this if(session)
 		//are they exec? no: do none of this
@@ -158,10 +158,10 @@ function addField(area,field,limit) {
 					while($the_count = mysql_fetch_array($result2)){
 						$the_official_count[$n] = $the_count['COUNT(*)'];
 						echo($the_official_count[$n].' :: '.$the_question[$b].'<br />');}
-						}echo('<a href="http://localhost/polls.php">go back</a>');}}}
+						}echo('<a href="http://apo.truman.edu/polls.php">go back</a>');}}}
 		if(isset($_GET['new'])){
 			?>
-			<form name="frm" action="http://localhost/polls.php" method="POST">
+			<form name="frm" action="http://apo.truman.edu/polls.php" method="POST">
 				<br /><br />
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name of Poll:  <input type="text" name="title" id="title" /><br /><br />
 				<center><textarea name="explanation">
@@ -202,7 +202,7 @@ function addField(area,field,limit) {
 		echo($question);
 		echo($poll_details.'<p>');
 	
-	echo('<form action="http://localhost/polls.php?answered=1&poll='.$poll_id.'" method="POST">');
+	echo('<form action="http://apo.truman.edu/polls.php?answered=1&poll='.$poll_id.'" method="POST">');
 	?>
 		<table border="0" width="360">
 			<?php //for($b = 1; $b <= $num_questions; $b++){

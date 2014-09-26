@@ -59,7 +59,7 @@ if (!isset($_SESSION['sessionID'])) {
 						$lastname = $row2['lastname'];
 				}
 					$question_id_pre = 1;
-					echo('<a href="http://localhost/polls.php?&start=yes&poll='.$poll_id.'&question_id_pre='.$question_id_pre.'">'.$poll_name.'</a>');}
+					echo('<a href="http://apo.truman.edu/polls.php?&start=yes&poll='.$poll_id.'&question_id_pre='.$question_id_pre.'">'.$poll_name.'</a>');}
 		if(isset($start)){
 			
 		$question_id_pre = $_GET['question_id_pre'];
@@ -85,7 +85,7 @@ if (!isset($_SESSION['sessionID'])) {
 						$question_id = $row3['question_id'];}
 		echo('<div id="week_service_events"><h3>'.$poll_name.'</h3>');
 		echo($question);?>
-	<form method="post" action="http://localhost/poll_processor.php?poll=1&question_id_pre=1">
+	<form method="post" action="http://apo.truman.edu/poll_processor.php?poll=1&question_id_pre=1">
 		<table border="0" width="360">
 			<tr>
 				<td>yes</td>

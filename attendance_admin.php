@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once ('layout.php');
 require_once ('mysql_access.php');
 page_header();
@@ -166,7 +166,7 @@ function process_add(){//A.K.A. FUNCTION BITCH()
 	if(($name == 'NULL')||($day == 'NULL')||($month == 'NULL')||($year == 'NULL')||($type == 'NULL')){
 		die("you didn't fill the form out correctly, please start over");
 		?>
-			<a href="http://localhost/attendance_admin.php">reset</a>
+			<a href="http://apo.truman.edu/attendance_admin.php">reset</a>
 		<?php
 	}
 	
@@ -950,7 +950,7 @@ $id = $_SESSION['sessionID'];
 if($id != 378 && $id != 582 && $id != 550 && $id != 714){echo("you do not have permission to view this page.");
 }else{
 ?>
-<a href="http://localhost/attendance_admin.php">reset</a>
+<a href="http://apo.truman.edu/attendance_admin.php">reset</a>
 <?php
 
 

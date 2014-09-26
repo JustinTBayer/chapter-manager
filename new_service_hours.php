@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 $result = '';
 require_once ('layout.php');
 require_once ('mysql_access.php');
@@ -141,7 +141,7 @@ if (isset($_POST['action']) && $_POST['action'] == "add_hour") {
 	$result = process_form();
 	if ($result == 1)
 	{
-		header('Location: http://localhost/new_service_hours.php' );
+		header('Location: http://apo.truman.edu/new_service_hours.php' );
 	}
 
 }
@@ -159,7 +159,7 @@ if (isset($_GET['delete'])) {
 page_header();?>
 <link rel="stylesheet"
    type="text/css"
-   media="print" href="http://localhost/layout_files/print_styles.css" />
+   media="print" href="http://apo.truman.edu/layout_files/print_styles.css" />
 <div class="content">
 <?php
 if (!isset($_SESSION['sessionID'])) {
@@ -176,7 +176,7 @@ global $current_semester;
 global $next_semester;
 echo<<<END
 <h1>Service Hours</h1>
-<h3>Check your hours from previous semesters <a href="http://localhost/service_hours_history.php">here</a></h3>
+<h3>Check your hours from previous semesters <a href="http://apo.truman.edu/service_hours_history.php">here</a></h3>
 </div>
 <div style="clear:both;"></div>
 <div id="service_bar">

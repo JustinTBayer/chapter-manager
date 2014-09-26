@@ -1,11 +1,11 @@
 <?php
 if((isset($_GET['browser'])) && ($_GET['browser'] == 'yes')){
-		// leave commented if PHP version >= 5.4 session_register('sessionPreference');
+		session_register('sessionPreference');
 		$_SESSION['sessionPreference'] = 'browser';
 }
 		
 if( strstr($_SERVER['HTTP_USER_AGENT'],'Android') || strstr($_SERVER['HTTP_USER_AGENT'],'iPhone') || strstr($_SERVER['HTTP_USER_AGENT'], 'BlackBerry')){
-	echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://localhost/mobile.php\">");
+	echo("<meta http-equiv=\"REFRESH\" content=\"0;url=http://apo.truman.edu/mobile.php\">");
 }else{
 require_once ('layout.php');
 require_once ('mysql_access.php');
@@ -26,12 +26,12 @@ if(mysql_num_rows(mysql_query($sql))>0){
 		$messages = "messages";
 	}
 	echo "&nbsp;{$firstname} {$lastname}, you have {$mysql_num_rows} new {$messages}. 
-	<a href=\"http://localhost/news.php\">read now</a><br/>";
+	<a href=\"http://apo.truman.edu/news.php\">read now</a><br/>";
 }
 
 $sql = "SELECT risk_management FROM contact_information WHERE id = ".$id." AND risk_management = '0000-00-00'";
 if(mysql_num_rows(mysql_query($sql))==1){
-	echo "&nbsp;you have not taken your risk management quiz, <a href=\"http://localhost/risk_management_quiz.php\">take it now</a><br/>";
+	echo "&nbsp;you have not taken your risk management quiz, <a href=\"http://apo.truman.edu/risk_management_quiz.php\">take it now</a><br/>";
 }
 ?>
 <div id="user_meta_right"><?php 

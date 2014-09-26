@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require_once ('layout.php');
 require_once ('mysql_access.php');
 page_header();
@@ -297,7 +297,7 @@ $id = $_SESSION['sessionID'];
 if($id != 268 && $id != 378 && $id != 571 && $id != 401){echo("you do not have permission to view this page.");
 }else{
 ?>
-<a href="http://localhost/attendance.php">reset</a>
+<a href="http://apo.truman.edu/attendance.php">reset</a>
 <?php
 
 

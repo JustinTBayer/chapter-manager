@@ -13,7 +13,7 @@
       <h2>Menu</h2>
       <ul>
         <li class="arrow">Home<span class="right"></span></li>
-        <li class= "first-child"><a href="http://localhost/service_hours.php" title="Service Hours">Service Hours</a></li>
+        <li class= "first-child"><a href="http://apo.truman.edu/service_hours.php" title="Service Hours">Service Hours</a></li>
         <li>Login</li>
         <li class="arrow">Netherlands : Portugal</li>
         <li>Germany : France<span class="right"></span></li>
