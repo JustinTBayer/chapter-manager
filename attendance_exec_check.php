@@ -6,43 +6,43 @@ echo("<div class=\"content\">");
 
 function list_attendance_stats($user_id){
 
-	$sql = "SELECT 
+	$sql = "SELECT
 			events.name AS name, SUM(events.worth) AS sum_worth, events.worth AS worth
-			FROM occurrence 
+			FROM occurrence
 			LEFT JOIN events ON occurrence.e_id = events.e_id
 			LEFT JOIN recorded_attendance ON occurrence.id = recorded_attendance.id
 			WHERE recorded_attendance.user_id = ".$user_id."
 			AND events.name = 'Active Meeting'
 			ORDER BY occurrence.id ASC";
-	$result = mysql_query($sql);	
+	$result = mysql_query($sql);
 		while($row = mysql_fetch_array($result)){
 			$name = $row['name'];
 			$sum_worth = $row['sum_worth'];
 			$worth = $row['worth'];
 		}
 	$sql = "SELECT COUNT(*) AS num_missed
-			FROM occurrence 
+			FROM occurrence
 			LEFT JOIN events ON occurrence.e_id = events.e_id
 			LEFT JOIN recorded_attendance ON occurrence.id = recorded_attendance.id
 			WHERE recorded_attendance.user_id = ".$user_id." AND events.name = 'Active Meeting'
 			AND recorded_attendance.attended = 0
 			ORDER BY occurrence.id ASC";
-	$result = mysql_query($sql);	
+	$result = mysql_query($sql);
 		while($row = mysql_fetch_array($result)){
 			$num_missed = $row['num_missed'];
 		}
 		echo "
 		<b>Total Absences:</b><br/>
 		{$name}: {$num_missed}";
-		
-		
+
+
 }
 
 function attendance_check($user_id){
 	$sql = "SELECT occurrence.e_id AS e_id, occurrence.id AS id, occurrence.date AS date,
-			events.name AS name, events.worth AS worth, occurrence.type AS type, 
+			events.name AS name, events.worth AS worth, occurrence.type AS type,
 			recorded_attendance.attended AS attended
-			FROM occurrence 
+			FROM occurrence
 			LEFT JOIN events ON occurrence.e_id = events.e_id
 			LEFT JOIN recorded_attendance ON occurrence.id = recorded_attendance.id
 			WHERE recorded_attendance.user_id = '".$user_id."'
@@ -87,26 +87,26 @@ END;
 				$worth = $row['worth'];
 				$type = $row['type'];
 				$attended = $row['attended'];
-				
+
 				if($attended == 1){
 					$attended = "yes";
 				}else{
 					$attended = "no";
 				}
-	
-	echo"		
-		<tr>		
+
+	echo"
+		<tr>
 		<td width='5%'></td>
 		<td width='25%'>$name</td>
 		<td width='25%'>$date</td>
 		<td width='20%'>$worth</td>
 		<td width='20%'>$attended</td>
 		<td width='5%'></td>
-		</tr>";	
+		</tr>";
 	}
 	echo "</table></div>";
-	$sql = "SELECT committee_attendance.committee_id AS comm_id, 
-			committee_occurrence.position_id AS position_id, 
+	$sql = "SELECT committee_attendance.committee_id AS comm_id,
+			committee_occurrence.position_id AS position_id,
 			positions.position AS position, committee_occurrence.date AS date
 			FROM committee_attendance
 			LEFT JOIN committee_occurrence ON committee_attendance.committee_id = committee_occurrence.committee_id
@@ -115,8 +115,8 @@ END;
 			ORDER BY committee_occurrence.date DESC";
 	$result = mysql_query($sql);
 	if(mysql_num_rows($result)!=0){
-	
-	
+
+
 echo "		<div style='margin: 0px auto; width: 100%; text-align: center;'>
 				<table cellpadding='0' cellspacing='0' class='hours_table'>
 				<tr class='hours_header'>
@@ -130,26 +130,26 @@ echo "		<div style='margin: 0px auto; width: 100%; text-align: center;'>
 			$position_id = $row['position_id'];
 			$position = $row['position'];
 			$date = $row['date'];
-			
-				
+
+
 echo "
-				<tr>		
+				<tr>
 				<td width='5%'></td>
 				<td width='45%'>$position</td>
 				<td width='45%'>$date</td>
 				<td width='5%'></td>
-				</tr>";	
+				</tr>";
 }
 echo("</table></div>");}
 }
 
 $id = $_SESSION['sessionID'];
-if($id != 268 && $id != 378 && $id != 512 && $id != 401 && $id != 550){echo("you do not have permission to view this page.");
+if($pos_id != 1 && $pos_id != 9 && $pos_id != 20){echo("you do not have permission to view this page.");
 }else{
 
 //$sql = "SELECT `id`,`firstname`, `lastname` FROM `contact_information` WHERE `active_sem` = '$current_semester' ORDER BY `firstname`";
 $sql = "SELECT `id`,`firstname`, `lastname` FROM `contact_information` WHERE 1 ORDER BY `firstname`";
-$result = mysql_query($sql);				
+$result = mysql_query($sql);
 echo<<<END
 <h1>Attendance Check</h1>
 <p>This page is for viewing attendance records for members.</p>
@@ -171,10 +171,10 @@ echo<<<END
 
 END;
 
-if (isset($_POST['list']) && ('process' == $_POST['list'])) { 
+if (isset($_POST['list']) && ('process' == $_POST['list'])) {
    attendance_check($_POST['user_id']);
-} 
+}
 
 
 }
-page_footer(); 
+page_footer();
