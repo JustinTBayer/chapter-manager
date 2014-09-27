@@ -28,10 +28,10 @@ function process_form() {
 		$result = "<div class='entry'>The description cannot be the same as the event. Please enter a valid description.<br/></div>";
 	}
 	else {
-		if($description == NULL || ""){
+		/*if($description == NULL || ""){
 			$description = "none";
-		}
-		$insert = "INSERT INTO apo.recorded_hours (user_id, event, month, day, year, date, description, hours, servicetype, fundraising, semester) values('$id', '$event', '$month','$day', '$year', '$date', '$description', '$hours', '$servicetype', '$fundraising', '$semester');";
+		}*/
+		$insert = "INSERT INTO apo.recorded_hours (user_id, event, month, day, year, date, description, hours, servicetype, fundraising, semester) values('$id', '$event', '$month','$day', '$year', '$date', '$description', '$hours', '$servicetype', '$fundraising', '$semester') ON DUPLICATE KEY UPDATE description='NEEDS NEW DESCRIPTION';";
 		$query2 = mysql_query($insert) or die(mysql_error());
 
 		$result = '1';

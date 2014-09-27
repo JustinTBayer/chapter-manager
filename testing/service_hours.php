@@ -43,7 +43,7 @@ function process_form() {
 		$result = "<div class='entry'>The description cannot be the same as the event. Please enter a valid description.<br/></div>";
 	}
 	else {
-		$insert = "INSERT INTO apo.recorded_hours (user_id, event, month, day, year, date, description, hours, servicetype, fundraising, semester) values('$id', '$event', '$month','$day', '$year', '$date', '$description', '$hours', '$servicetype', '$fundraising', '$semester');";
+		$insert = "INSERT INTO apo.recorded_hours (user_id, event, month, day, year, date, description, hours, servicetype, fundraising, semester) values('$id', '$event', '$month','$day', '$year', '$date', '$description', '$hours', '$servicetype', '$fundraising', '$semester') ON DUPLICATE KEY UPDATE description='NEEDS NEW DESCRIPTION';";
 		$query2 = mysql_query($insert) or die("If you encounter problems, please contact the webmaster.");
 		$result = '1';
 			if($fundraising == 1){//also ads fundraising hours to another DB so we can see who the first 30 were.
