@@ -27,6 +27,7 @@
             <ul>
             		<li><a href="login.php">Login</a></li>
                     <li><a href="attendance.php">Attendance</a></li>
+                    <li><a href="calendar.php">Calendar</a></li>
                     <li><a href="service_hours.php">Hours</a></li>
                     <li><a href="members_list.php">Search Members</a></li>
                     <li><a href="top_hours.php">Top Hours</a></li>
