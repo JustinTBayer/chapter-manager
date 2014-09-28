@@ -40,11 +40,6 @@ function process_login(){
 	$password = addslashes($_POST["password"]);
 
 	if ($username == 'alumni' AND $password == 'forgetmenot') {
-		session_register('sessionUsername');
-		session_register('sessionFirstname');
-		session_register('sessionLastname');
-		session_register('sessionexec');
-		session_register('sessionID');
 		$_SESSION['sessionUsername'] = 'Alumni';
 		$_SESSION['sessionFirstname'] = 'Brother';
 		$_SESSION['sessionLastname'] = 'Alumni';
@@ -52,38 +47,11 @@ function process_login(){
 		$_SESSION['sessionID'] = 'Alumni';
 		echo "<p>You have succesfully logged in as Alumni.</p>";
 
-	} elseif ($username == 'theswanker' AND $password == 'warden22') {
-		session_register('sessionUsername');
-		session_register('sessionFirstname');
-		session_register('sessionLastname');
-		session_register('sessionexec');
-		session_register('sessionID');
-		$_SESSION['sessionUsername'] = 'Advisor';
-		$_SESSION['sessionFirstname'] = 'Advisor';
-		$_SESSION['sessionLastname'] = 'Advisor';
-		$_SESSION['sessionexec'] = '2';
-		$_SESSION['sessionID'] = 'Advisor';
-		echo "<p>You have succesfully logged in as an THE SWANKER.</p>";
+	}
 
-	} elseif ($username == 'test' AND $password == '123987456555') {
-		session_register('sessionUsername');
-		session_register('sessionFirstname');
-		session_register('sessionLastname');
-		session_register('sessionexec');
-		session_register('sessionID');
-		$_SESSION['sessionUsername'] = 'Advisor';
-		$_SESSION['sessionFirstname'] = 'Advisor';
-		$_SESSION['sessionLastname'] = 'Advisor';
-		$_SESSION['sessionexec'] = '99';
-		$_SESSION['sessionID'] = 'Advisor';
-		echo "<p>You have succesfully logged in as a tester.</p>";
+	}
 
 	}elseif ($username == 'advisor' AND $password == 'helpinghand') {
-		session_register('sessionUsername');
-		session_register('sessionFirstname');
-		session_register('sessionLastname');
-		session_register('sessionexec');
-		session_register('sessionID');
 		$_SESSION['sessionUsername'] = 'Advisor';
 		$_SESSION['sessionFirstname'] = 'Advisor';
 		$_SESSION['sessionLastname'] = 'Advisor';
@@ -149,7 +117,7 @@ function process_login(){
 			while($row = mysql_fetch_array($result)){
 				$visited = $row['visited'];}
 
-			echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/">');//}
+			echo('<meta HTTP-EQUIV="REFRESH" content="0; url=./index.php">');//}
 
 		}
 	}
