@@ -1,5 +1,4 @@
 ﻿<?php
-session_start();		
 require_once ('layout.php');
 require_once ('mysql_access.php');
 $id = $_SESSION['sessionID'];
@@ -28,7 +27,7 @@ if(mysql_num_rows(mysql_query($sql))>0){
 	}else{
 		$messages = "messages";
 	}
-	echo "&nbsp;{$firstname} {$lastname}, you have {$mysql_num_rows} new {$messages}. 
+	echo "&nbsp;{$firstname} {$lastname}, you have {$mysql_num_rows} new {$messages}.
 	<a href=\"http://apo.truman.edu/news.php\">read now</a><br/>";
 }
 */
@@ -37,7 +36,7 @@ if((mysql_num_rows(mysql_query($sql))==1)&&($_SESSION['sessionStatus'] != 'Pledg
 	echo "&nbsp;you have not taken your risk management quiz, <a href=\"http://apo.truman.edu/risk_management_quiz.php\">take it now</a><br/>";
 }
 ?>
-<div id="user_meta_right"><?php 
+<div id="user_meta_right"><?php
 if(date('d')%2==0){//runs every other day.
 	require_once('maintenance/functions.php');//backup functions
 	//create_backup();//creates a backup, uncomment to use.
