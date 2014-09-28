@@ -17,7 +17,7 @@ function print_login($error){
 echo <<<END
 	<table>
 	<h1>Member Login</h1>
-	<p>$error_message Please log in if you belong to Epsilon and have an account.  If you do not have an account, please contact the webmaster for the registration password and <a color="#FFFF00" href='register.php'>sign up</a>.  If you forgot your password, go here: <a href='login_forgotpw.php'> Forgot Password</a>	
+	<p>$error_message Please log in if you belong to Epsilon and have an account.  If you do not have an account, please contact the webmaster for the registration password and <a color="#FFFF00" href='register.php'>sign up</a>.  If you forgot your password, go here: <a href='login_forgotpw.php'> Forgot Password</a>
 	</p>
 			<form name="loginform" method="post" action="$_SERVER[PHP_SELF]">
 			<tr>
@@ -49,7 +49,7 @@ function process_login(){
 		$_SESSION['sessionFirstname'] = 'Brother';
 		$_SESSION['sessionLastname'] = 'Alumni';
 		$_SESSION['sessionexec'] = '0';
-		$_SESSION['sessionID'] = 'Alumni';		
+		$_SESSION['sessionID'] = 'Alumni';
 		echo "<p>You have succesfully logged in as Alumni.</p>";
 
 	} elseif ($username == 'theswanker' AND $password == 'warden22') {
@@ -64,7 +64,7 @@ function process_login(){
 		$_SESSION['sessionexec'] = '2';
 		$_SESSION['sessionID'] = 'Advisor';
 		echo "<p>You have succesfully logged in as an THE SWANKER.</p>";
-		
+
 	} elseif ($username == 'test' AND $password == '123987456555') {
 		session_register('sessionUsername');
 		session_register('sessionFirstname');
@@ -77,13 +77,13 @@ function process_login(){
 		$_SESSION['sessionexec'] = '99';
 		$_SESSION['sessionID'] = 'Advisor';
 		echo "<p>You have succesfully logged in as a tester.</p>";
-		
+
 	}elseif ($username == 'advisor' AND $password == 'helpinghand') {
 		session_register('sessionUsername');
 		session_register('sessionFirstname');
 		session_register('sessionLastname');
 		session_register('sessionexec');
-		session_register('sessionID');	
+		session_register('sessionID');
 		$_SESSION['sessionUsername'] = 'Advisor';
 		$_SESSION['sessionFirstname'] = 'Advisor';
 		$_SESSION['sessionLastname'] = 'Advisor';
@@ -92,12 +92,12 @@ function process_login(){
 		echo "<p>You have succesfully logged in as an Advisor.</p>";
 
 //	} elseif ($username == 'exechelper' AND $password == 'leadership') {
-//		
+//
 //		session_register('sessionUsername');
 //		session_register('sessionFirstname');
 //		session_register('sessionLastname');
 //		session_register('sessionexec');
-//		session_register('sessionID');	
+//		session_register('sessionID');
 //		$_SESSION['sessionUsername'] = 'exechelper';
 //		$_SESSION['sessionFirstname'] = 'exechelper';
 //		$_SESSION['sessionLastname'] = 'exechelper';
@@ -105,7 +105,7 @@ function process_login(){
 //		$_SESSION['sessionID'] = 'exechelper';
 //		if ($_SESSION['sessionexec']==1){
 //			print_exec_logout();
-//		}	
+//		}
 //		else {
 //			print_logout();
 //		}
@@ -119,46 +119,38 @@ function process_login(){
 			if (!$r) {
 				print_login(1);
 				exit();
-			} 
+			}
 		if (!$r) {
 			print_login(1);
 		} else {
 		extract($r);
-		
-		session_register('sessionUsername');
-		session_register('sessionFirstname');
-		session_register('sessionLastname');
-		session_register('sessionexec');
-		session_register('sessionposition');
-		session_register('sessionID');	
-		session_register('active_sem');
-		session_register('sessionStatus');
+
 		$_SESSION['sessionUsername'] = $username;
 		$_SESSION['sessionFirstname'] = $firstname;
 		$_SESSION['sessionLastname'] = $lastname;
 		$_SESSION['sessionposition'] = $position;
 		$_SESSION['sessionexec'] = $exec;
-		$_SESSION['sessionID'] = $id;	
+		$_SESSION['sessionID'] = $id;
 		$_SESSION['active_sem'] = $active_sem;
 		$_SESSION['sessionStatus'] = $status;
-		
+
 		//Psuedo webmaster User_id 378
 		if($id==378){
 			$_SESSION['sessionposition'] = "Webmaster";
 			$_SESSION['sessionexec'] = 1;
 		}
-		
 
-		$sql = "SELECT * FROM `contact_information` 
-				WHERE `lastname` = '".$lastname."' 
-				AND `firstname` = '".$firstname."' 
+
+		$sql = "SELECT * FROM `contact_information`
+				WHERE `lastname` = '".$lastname."'
+				AND `firstname` = '".$firstname."'
 				AND `username` = '".$username."'";
 		$result = mysql_query($sql);
-			while($row = mysql_fetch_array($result)){ 
+			while($row = mysql_fetch_array($result)){
 				$visited = $row['visited'];}
-				
+
 			echo('<meta HTTP-EQUIV="REFRESH" content="0; url=http://apo.truman.edu/">');//}
-			
+
 		}
 	}
 }
@@ -170,11 +162,11 @@ function logout(){
 		unset($_SESSION['sessionexec']);
 		unset($_SESSION['sessionID']);
 }
-	if (!isset($_SESSION['sessionID']) && isset($_POST['logstate']) && ($_POST['logstate'] == 'login')) { 
-    	process_login(); 
+	if (!isset($_SESSION['sessionID']) && isset($_POST['logstate']) && ($_POST['logstate'] == 'login')) {
+    	process_login();
 	}else if (!isset($_SESSION['sessionID'])){
-		print_login(); 
-	}else {		
+		print_login();
+	}else {
 	}
 echo "</div>";
 page_footer();
