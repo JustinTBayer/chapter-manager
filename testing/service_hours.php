@@ -370,7 +370,7 @@ END;
 END;
 ?>
 <?php
-	list_stats($_SESSION[sessionID], $current_semester);
+	list_stats($_SESSION['sessionID'], $current_semester);
 ?>
 	</div>
 
@@ -380,7 +380,7 @@ END;
 
 <div class="row">
 <?php
-list_hours($_SESSION[sessionID]);
+list_hours($_SESSION['sessionID']);
 }
 ?>
 </div>

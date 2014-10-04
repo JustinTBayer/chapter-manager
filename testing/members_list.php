@@ -116,40 +116,40 @@ if (!isset($_SESSION['sessionID'])) {
 
 
 	while ($t = mysql_fetch_array($querym)) {
-		if ($t[status] == "Old Couple") {
-			$t[status] = "Pledge";
+		if ($t['status'] == "Old Couple") {
+			$t['status'] = "Pledge";
 		}
 
-		if ($t[position] != '') {
+		if ($t['position'] != '') {
 			$position = " - $t[position]";
 		} else {
 			$position = "";
 		}
 
-		if ($t[famflower] != '') {
+		if ($t['famflower'] != '') {
 			$info_flower = "<div><div class='label'>Flower</div><div class='datum'>$t[famflower]</div></div>";
 		} else {
 			$info_flower = "";
 		}
-		if ($t[status] != '') {
+		if ($t['status'] != '') {
 			$info_status = "<div><div class='label'>Status</div><div class='datum'>$t[status] $position</div></div>";
 		} else {
 			$info_status = "";
 		}
 
-		if ($t[pledgesem] != '') {
+		if ($t['pledgesem'] != '') {
 			$info_pledge = "<div><div class='label'>Pledged</div><div class='datum'>$t[pledgesem] $t[pledgeyear]</div></div>";
 		} else {
 			$info_pledge = "";
 		}
 
-		if ($t[bigbro] != '') {
+		if ($t['bigbro'] != '') {
 			$info_bigs = "<div><div class='label'>Bigs</div><div class='datum'>$t[bigbro]</div></div>";
 		} else {
 			$info_bigs = "";
 		}
 
-		if ($t[littlebro] != '') {
+		if ($t['littlebro'] != '') {
 			$info_littles = "<div><div class='label'>Littles</div><div class='datum'>$t[littlebro]</div></div>";
 		} else {
 			$info_littles = "";
@@ -157,19 +157,19 @@ if (!isset($_SESSION['sessionID'])) {
 
 
 		$birthday = date("F j", mktime(0, 0, 0, $t['bmonth'], $t['bday'], 2000));
-		if ($t[bday] != '') {
+		if ($t['bday'] != '') {
 			$info_birthday = "<div><div class='label'>Birthday</div><div class='datum'>$birthday</div></div>";
 		} else {
 			$info_birthday = "";
 		}
 
-		if ($t[major] != '') {
+		if ($t['major'] != '') {
 			$info_major = "	<div><div class='label'>Major</div><div class='datum'>$t[major]</div></div>";
 		} else {
 			$info_major = "";
 		}
 
-		if ($t[minor] != '') {
+		if ($t['minor'] != '') {
 			$info_minor = "<div><div class='label'>Minor</div><div class='datum'>$t[minor]</div></div>";
 		} else {
 			$info_minor = "";

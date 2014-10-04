@@ -28,7 +28,6 @@ function print_question($question) {
         $i = $i + 1;
     }
     echo "<br/>";
-
 }
 
 function score_quiz($right_answers, $answers) {
@@ -40,7 +39,6 @@ function score_quiz($right_answers, $answers) {
         } else {
             $missed[] = "$number";
         }
-
     }
 
     echo "Score: " . $score . "<br>";
@@ -101,7 +99,7 @@ function passed_quiz() {
         $sql = "SELECT `risk_management` FROM `contact_information` WHERE id='$user_id'";
         $result = mysql_query($sql);
         $row = mysql_fetch_array($result);
-        if ($row[risk_management] != "0000-00-00") {
+        if ($row['risk_management'] != "0000-00-00") {
             return true;
         }
         else {
