@@ -29,6 +29,7 @@
                     <li><a href="attendance.php">Attendance</a></li>
                     <li><a href="calendar.php">Calendar</a></li>
                     <li><a href="service_hours.php">Hours</a></li>
+                    <li><a href="risk_management_quiz.php">Risk Management Quiz</a></li>
                     <li><a href="members_list.php">Search Members</a></li>
                     <li><a href="top_hours.php">Top Hours</a></li>
                     <li><a href="updateinfo.php">Update Info</a></li>
@@ -37,6 +38,8 @@
 		<li>
             <a href="?exec" aria-haspopup="true"><span>Executive</span></a>
                 <ul>
+                    <li><a href="attendance_admin.php">Record Attendance</a></li>
+                    <li><a href="attendance_check.php">Check Attendance</a></li>
                     <li><a href="check_hours.php">Check Hours</a></li>
                     <li><a href="edit_exec.php">Edit Exec</a></li>
                 </ul>
