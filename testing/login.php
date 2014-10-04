@@ -1,5 +1,6 @@
 ﻿<?php
 require_once ('session.php');
+require_once ('mysql_access.php');
 ?>
 <!doctype html>
 <html>
@@ -17,7 +18,6 @@ require_once ('session.php');
     <!-- PHP method to include header -->
 
 <?php
-require_once ('mysql_access.php');
 //page_head();
 //echo"<body style=\"background-color:#EBEBEB\" OnLoad=\"document.loginform.username.focus();\">";
 //page_header();
