@@ -6,50 +6,50 @@ function str_rand($length = 8, $seeds = 'alphanum')
     $seedings['numeric'] = '0123456789';
     $seedings['alphanum'] = 'abcdefghijklmnopqrstuvwqyz0123456789';
     $seedings['hexidec'] = '0123456789abcdef';
-    
+
     // Choose seed
     if (isset($seedings[$seeds]))
     {
         $seeds = $seedings[$seeds];
     }
-    
+
     // Seed generator
     list($usec, $sec) = explode(' ', microtime());
     $seed = (float) $sec + ((float) $usec * 100000);
     mt_srand($seed);
-    
+
     // Generate
     $str = '';
     $seeds_count = strlen($seeds);
-    
+
     for ($i = 0; $length > $i; $i++)
     {
         $str .= $seeds{mt_rand(0, $seeds_count - 1)};
     }
-    
+
     return $str;
 }
 
 require("class.phpmailer.php");
 echo "Mail being prepared.";
 $mail = new PHPMailer();
-// connect to database 
+// connect to database
 
-$db = mysql_connect("mysql.truman.edu", "apo", "glueallE17"); 
-if (!$db) { 
-	print "Error - Could not connect to mysql"; 
-    exit; 
-} 
-$er = mysql_select_db("apo"); 
-if (!$er) { 
-    print "Error - Could not select database"; 
-    exit; 
-} 
+$db = mysql_connect("mysql.truman.edu", "apo", "glueallE17");
+if (!$db) {
+	print "Error - Could not connect to mysql";
+    exit;
+}
+$er = mysql_select_db("apo");
+if (!$er) {
+    print "Error - Could not select database";
+    exit;
+}
 
 $mail = new PHPMailer();
 $mail->IsSMTP();                                      // set mailer to use SMTP
 $mail->Host = "mail.truman.edu";  					  // specify main server
-$email = $_GET['email'];	
+$email = $_GET['email'];
 $mail->FromName = "Alpha Phi Omega Epsilon";
 $select = "SELECT id, firstname, lastname, username
 		FROM contact_information
@@ -76,7 +76,7 @@ if (!$r) {
 					"Password: " . $new_password . "\n \n" .
 					"Please let us know if you have any further problems. \n" .
 					"APO Webmaster";
-					
+
 	$mail->Subject = $subject;
 	$mail->Body    = $emailToSend;
 
@@ -91,4 +91,4 @@ if (!$r) {
 	}
 }
 
-?> 
+?>

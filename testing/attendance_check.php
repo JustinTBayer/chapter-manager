@@ -1,6 +1,7 @@
 <?php
 require_once ('session.php');
 require_once ('mysql_access.php');
+error_reporting(-1);
 ?>
 <!doctype html>
 <html>
@@ -157,8 +158,9 @@ echo "
 echo("</table></div>");}
 }
 
-$pos_id = $_SESSION['sessionID'];
-if($pos_id != 1 && $pos_id != 9 && $pos_id != 20){echo("you do not have permission to view this page.");
+$position = $_SESSION['sessionposition'];
+echo "$position";
+if($position != "Webmaster" && $position != "President"){echo("you do not have permission to view this page.");
 }else{
 
 //$sql = "SELECT `id`,`firstname`, `lastname` FROM `contact_information` WHERE `active_sem` = '$current_semester' ORDER BY `firstname`";

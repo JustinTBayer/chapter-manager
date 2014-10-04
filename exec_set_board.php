@@ -1,19 +1,14 @@
 ﻿<?php
 require_once ('layout.php');
-
 require_once ('mysql_access.php');
 
 page_header();
-
 ?>
-
-
 
 <div class="content">
 
 <?php
 $position = $_SESSION['sessionposition'];
-
 
 if (($position == "Webmaster" OR $position == "President" ) & ($_SESSION['sessionexec'] == 1)) {
 	if ($_GET[action] == "delete_exec") {

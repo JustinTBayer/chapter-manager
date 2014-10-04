@@ -961,9 +961,10 @@ END;
     echo("</fieldset>");
 }
 
-//only Logan McCamon, Andrew Wilson, and Ronnie W can access this page
-$pos_id = $_SESSION['sessionID'];
-if($pos_id != 1 && $pos_id != 9 && $pos_id != 20){echo("you do not have permission to view this page.");
+//only President, Rec Sec, and Webmaster can access this page
+$position = $_SESSION['sessionposition'];
+echo "$position";
+if($position != "Webmaster" && $position != "President"){echo("you do not have permission to view this page.");
 }else{
 ?>
 <a href="http://apo.truman.edu/attendance_admin.php">reset</a>
