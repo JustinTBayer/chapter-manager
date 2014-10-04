@@ -26,7 +26,7 @@ $position = $_SESSION['sessionposition'];
 
 
 if (($position == "Webmaster" OR $position == "President" ) & ($_SESSION['sessionexec'] == 1)) {
-	if ($_GET[action] == "delete_exec") {
+	if ($_GET['action'] == "delete_exec") {
 		$id = $_GET[id];
 		$sql = "UPDATE `contact_information` SET `exec` = 0, `position` = '', `status` = 'Active' WHERE `id`=$id";
 		if ($querey = mysql_query($sql)) {
@@ -34,11 +34,11 @@ if (($position == "Webmaster" OR $position == "President" ) & ($_SESSION['sessio
 		} else {
 			echo "There was an error removing position, please contact Webmaster.";
 		}
-	} elseif ($_GET[action] == "make_exec") {
-		$pos_id = $_GET[pos_id];
-		$user_id = $_GET[user_id];
+	} elseif ($_GET['action'] == "make_exec") {
+		$pos_id = $_GET['pos_id'];
+		$user_id = $_GET['user_id'];
 
-		$pos = $_GET[position];
+		$pos = $_GET['position'];
 
 		$sql = "SELECT `position`, `position_status` FROM `positions` WHERE `position_id` = '$pos_id' LIMIT 1";
 		$query = mysql_query($sql) or die("If you encounter problems, please contact the webmaster.");
@@ -53,7 +53,7 @@ if (($position == "Webmaster" OR $position == "President" ) & ($_SESSION['sessio
 				echo "There was an error adding position, please contact Webmaster.";
 			}
 		}
-	} elseif ($_GET[action] == "new_position") {
+	} elseif ($_GET['action'] == "new_position") {
 		$position_name = $_GET['position_name'];
 		$position_status = $_GET['position_status'];
 
@@ -72,7 +72,7 @@ if (($position == "Webmaster" OR $position == "President" ) & ($_SESSION['sessio
 //		} else {
 //			echo "There was an error, please contact Webmaster.";
 //		}
-	} elseif ($_GET[action] == "make_pledge_trainer") {
+	} elseif ($_GET['action'] == "make_pledge_trainer") {
 		$id = $_GET['user_id'];
 
 		$sql = "UPDATE `contact_information` SET `position` = 'Pledge Trainer', `status` = 'Active' WHERE `id`='$id'";

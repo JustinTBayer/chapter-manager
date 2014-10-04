@@ -69,7 +69,7 @@ function family_hours() {
 
 	$fam_flower_array = array();
 	while ($row = mysql_fetch_array($result2)) {
-		$fam_flower_array[$row[famflower]] = $row['members'];
+		$fam_flower_array[$row['famflower']] = $row['members'];
 	}
 
 	echo "<table cellpadding=0 cellspacing=0 class='hours'><tr class='header'><td><b>Family Hours</b></td><td><b>Hours</b></td><td><b>HPM*</b></tr>";
@@ -82,7 +82,7 @@ function family_hours() {
 			$row_num = "class='row_2'";
 		}
 
-		$hours_per_member = round($row['sum_hours'] / $fam_flower_array[$row[famflower]], 1);
+		$hours_per_member = round($row['sum_hours'] / $fam_flower_array[$row['famflower']], 1);
 		echo "<tr $row_num><td><b>$row[famflower]</b></td><td>$row[sum_hours]</td><td>$hours_per_member</tr>\n";
 		$i += 1;
 	}

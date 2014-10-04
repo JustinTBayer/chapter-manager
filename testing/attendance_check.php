@@ -50,8 +50,6 @@ function list_attendance_stats($user_id){
         echo "
         <b>Total Absences:</b><br/>
         {$name}: {$num_missed}";
-
-
 }
 
 function attendance_check($user_id){

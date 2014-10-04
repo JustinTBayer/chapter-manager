@@ -57,9 +57,9 @@ if (!isset($_SESSION['sessionID'])) {
 
 		$row = mysql_fetch_array($result);
 
-		$b_day = mktime(0, 0, 0, $row[bmonth], 1, 2000);
+		$b_day = mktime(0, 0, 0, $row['bmonth'], 1, 2000);
 		$month = date('F', $b_day);
-		$selected = $row[hide_info];
+		$selected = $row['hide_info'];
 		if($selected == 'F'){
 			$selectedF = "checked=\"yes\"";
 			$selectedT = "";
@@ -67,7 +67,7 @@ if (!isset($_SESSION['sessionID'])) {
 			$selectedF = "";
 			$selectedT = "checked=\"yes\"";
 		}
-		$gender = $row[gender];
+		$gender = $row['gender'];
 		if($gender == 2){
 			$genderF = "";
 			$genderM = "checked=\"yes\"";
